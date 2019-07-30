@@ -1,12 +1,23 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/">Home</router-link> |
+      <router-link to="/">Connexion</router-link> |
       <router-link to="/posts">Post</router-link>
     </div>
     <router-view/>
   </div>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      isConnected: false
+    }
+  }
+}
+</script>
+
 
 <style lang="scss">
 #app {
