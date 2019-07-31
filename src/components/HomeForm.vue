@@ -22,8 +22,8 @@ export default {
       password: '',
       correctusername: 'sarah',
       correctpassword: 'adagio',
-      fail:true,
-      messagefail: 'Echec de la connexion',
+      fail: true,
+      messagefail: 'Echec de la connexion'
     }
   },
   methods: {

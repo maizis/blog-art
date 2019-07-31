@@ -1,35 +1,31 @@
 <template>
   <div class="app">
-    <h1>{{msg}}</h1>
-
+    <h1> Listes des posts </h1>
   <table>
         <tr>
           <th>Id</th>
           <th>Title</th>
+          <th>Body</th>
         </tr>
-        <tr v-for="post in posts" :key="post.id">
-          <td>{{post.id}}</td>
+        <tr v-for="post in posts" :key=post.id>
+          <td >{{post.id}}</td>
           <td>{{post.title}}</td>
-
+          <td>{{post.body}}</td>
         </tr>
     </table>
     </div>
 </template>
 <script>
-import axios from 'axios'
+import { mapState } from 'vuex'
 export default {
-  data () {
-    return {
-      name: 'posts',
-      msg: 'Liste Posts',
-      posts: []
-    }
+  name: 'posts',
+  created () {
+    this.$store.dispatch('showposts')
   },
-  mounted () {
-    axios
-      .get('https://jsonplaceholder.typicode.com/posts')
-      .then((response) => { this.posts = response.data })
-  }
+  computed:
+    mapState([
+      'posts'
+    ])
 }
 </script>
 <style>
@@ -39,5 +35,4 @@ border : 1px solid black;
 table{
 border-collapse: collapse;
 }
-
 </style>

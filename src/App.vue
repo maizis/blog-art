@@ -10,15 +10,13 @@
 
 <script>
 export default {
-  data() {
+  data () {
     return {
       isConnected: false
     }
   }
 }
 </script>
-
-
 <style lang="scss">
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
