@@ -14,6 +14,7 @@
 </div>
 </template>
 <script>
+import { mapState } from 'vuex'
 export default {
   name: 'HomeForm',
   data () {
@@ -31,7 +32,7 @@ export default {
       if (this.username !== this.correctusername || this.password !== this.correctpassword) {
         this.fail = false
       } else {
-        this.$emit('user:connected', true)
+          this.$store.dispatch ('turn_connected')
       }
     }
   }

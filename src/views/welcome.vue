@@ -1,18 +1,21 @@
 <template>
-<div class="isconnected">
-<h1> Vous êtes maintenant connecté {{correctusername}} </h1>
+<div class="welcome">
+  <h1> Welcome {{correctusername}}</h1>
 </div>
 </template>
 <script>
+import { mapState } from 'vuex'
 export default {
-  name: 'HomeForm',
+  name: 'welcome',
   data () {
     return {
       correctusername: 'sarah',
       correctpassword: 'adagio',
+
     }
   }
-}
+
+  }
 </script>
 <style scoped lang="scss">
 ul {

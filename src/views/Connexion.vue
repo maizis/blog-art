@@ -1,24 +1,20 @@
 <template>
   <div class="home">
     <img alt="Vue logo" src="../assets/logo.png">
-    <HomeForm msg="Welcome to Your Vue.js App" @user:connected="isConnected = $event"/>
+    <LoginForm />
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import HomeForm from '@/components/HomeForm.vue'
+import LoginForm from '@/components/LoginForm.vue'
 
 export default {
   name: 'connexion',
   components: {
-    HomeForm
-  },
-
-  data() {
-    return {
-      isConnected: false
-    }
-  },
+    LoginForm
+  }
 }
+
+
 </script>

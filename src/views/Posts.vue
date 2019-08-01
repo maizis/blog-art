@@ -16,16 +16,18 @@
     </div>
 </template>
 <script>
-import { mapState } from 'vuex'
+import { mapState, mapGetters } from 'vuex'
+
 export default {
   name: 'posts',
   created () {
-    this.$store.dispatch('showposts')
+    this.$store.dispatch('showPosts')
   },
-  computed:
-    mapState([
-      'posts'
-    ])
+  computed: {
+	  posts() {
+      return this.$store.getters.posts
+    },
+		}
 }
 </script>
 <style>
