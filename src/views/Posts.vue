@@ -24,10 +24,10 @@ export default {
     this.$store.dispatch('showPosts')
   },
   computed: {
-	  posts() {
+    posts () {
       return this.$store.getters.posts
-    },
-		}
+    }
+  }
 }
 </script>
 <style>

@@ -17,15 +17,7 @@ const router = new Router({
     {
       path: '/login',
       name: 'login',
-      component: Login,
-      beforeEnter: (to, from, next) => {
-        if (!store.getters.isConnected) {
-          next()
-        } else {
-          next(router.push({ path: '/' }))
-          //Finir la redirection vers la homme
-        }
-      }
+      component: Login
     },
     {
       path: '/posts',

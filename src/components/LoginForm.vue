@@ -32,21 +32,15 @@ export default {
       if (this.username !== this.correctusername || this.password !== this.correctpassword) {
         this.fail = false
       } else {
-          this.$store.dispatch ('turn_connected')
+        this.$store.dispatch('turn_connected')
+        this.$router.push('/')
       }
     }
   }
 }
 </script>
 <style scoped lang="scss">
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
+
 label {
   color: #42b983;
 }

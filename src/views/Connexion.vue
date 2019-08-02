@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <img alt="Vue logo" src="../assets/logo.png">
-    <LoginForm />
+    <LoginForm/>
   </div>
 </template>
 
@@ -13,8 +13,11 @@ export default {
   name: 'connexion',
   components: {
     LoginForm
+  },
+  computed: {
+    isConnected () {
+      return this.$store.getters.isConnected
+    }
   }
 }
-
-
 </script>
