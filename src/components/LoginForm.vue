@@ -1,3 +1,4 @@
+
 <template>
 <div class="form">
 <p v-if="fail"> </p>
@@ -5,8 +6,8 @@
   <div>
     <form method="post" id="app">
       <label for="username"> Username </label>  <br>
-       <input type="text" name="username" v-model="username" id="username" required> <br>
-      <label for="username"> Password </label>  <br>
+        <input type="text" name="username" v-model="username" id="username" required> <br>
+      <label for="password"> Password </label>  <br>
        <input type="password" name="password" v-model="password" id="password" required>  <br><br>
       <button v-on:click.prevent="identification"> Connexion </button>
     </form>
@@ -40,6 +41,7 @@ export default {
 }
 </script>
 <style scoped lang="scss">
+
 
 label {
   color: #42b983;

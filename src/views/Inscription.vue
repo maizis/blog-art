@@ -1,27 +1,21 @@
 <template>
   <div class="home">
     <img alt="Vue logo" src="../assets/logo.png">
-      <LoginForm/>
+      <SignupForm/>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import LoginForm from '@/components/LoginForm.vue'
+import SignupForm from '@/components/SignupForm.vue'
 
 export default {
-  name: 'connexion',
+  name: 'signup',
   components: {
-    LoginForm
+    SignupForm
   },
   data () {
     return {
-      turnform: true
-    }
-  },
-  computed: {
-    isConnected () {
-      return this.$store.getters.isConnected
     }
   }
 }
