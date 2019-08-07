@@ -1,6 +1,8 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
+  <div class="home3">
+    <div>
+      <img id="img2" alt="Vue logo" src="../assets/image4.png">
+    </div>
       <LoginForm/>
   </div>
 </template>
@@ -27,4 +29,11 @@ export default {
 }
 </script>
 <style>
+#img2 {
+  width:200px;
+}
+.home3 {
+  position:center;
+  margin-top:40px;
+}
 </style>

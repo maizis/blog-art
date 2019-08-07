@@ -1,6 +1,6 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
+  <div class="home1">
+    <img id="img1" alt="Vue logo" src="../assets/image4.png">
       <SignupForm/>
   </div>
 </template>
@@ -21,4 +21,9 @@ export default {
 }
 </script>
 <style>
+#img1 {
+  width:200px;
+  margin-top:40px;
+}
+
 </style>

@@ -1,21 +1,24 @@
 
 <template>
-<div class="form">
-<p v-if="fail"> </p>
-<p v-else>  {{messagefail}} </p>
-  <div>
-    <form method="post" id="app">
-      <label for="username"> Username </label>  <br>
-        <input type="text" name="username" v-model="username" id="username" required> <br>
-      <label for="password"> Password </label>  <br>
-       <input type="password" name="password" v-model="password" id="password" required>  <br><br>
-      <button v-on:click.prevent="identification"> Connexion </button>
-    </form>
+  <div class>
+    <p v-if="fail"> </p>
+    <p v-else>  {{messagefail}} </p>
+    <div id="form">
+       <div class="field">
+          <div class="control">
+            <br>
+            <input class="input" type="text" name="username" v-model="username" id="username"  placeholder="Pseudo" required>
+             <br>
+             <br>
+            <input class="input" type="password" name="password" v-model="password" id="password"  placeholder="Password" required>
+          </div>
+        </div>
+          <br>
+            <a class="button is-primary" v-on:click.prevent="identification"> Connexion </a>
+    </div>
   </div>
-</div>
 </template>
 <script>
-import { mapState } from 'vuex'
 export default {
   name: 'HomeForm',
   data () {
@@ -41,9 +44,13 @@ export default {
 }
 </script>
 <style scoped lang="scss">
-
-
 label {
   color: #42b983;
+}
+#form {
+position:center;
+width:300px;
+height: 500px;
+margin: 0 auto;
 }
 </style>

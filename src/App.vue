@@ -23,11 +23,11 @@
         <div class="navbar-end">
           <div class="navbar-item">
             <div class="buttons">
-              <a class="button button is-light">
+              <a class="button is-outline">
                 <router-link v-if="!isConnected" to="/login"> <strong>Connexion</strong></router-link>
-                 <a href="" v-else v-on:click="logout"> Déconnexion</a>
+                 <a href="" v-else v-on:click="logout"> <strong>Déconnexion</strong></a>
               </a>
-              <a class="button is-light">  <router-link to="/signup"> Inscription </router-link> </a>
+              <a class="button is-outline" v-if="!isConnected">  <router-link to="/signup"> Inscription </router-link> </a>
             </div>
           </div>
         </div>
@@ -56,11 +56,6 @@ export default {
 
 <style lang="scss">
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
-  text-decoration:none
 }
 </style>
