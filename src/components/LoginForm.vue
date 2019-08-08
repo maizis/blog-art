@@ -1,10 +1,9 @@
-
 <template>
-  <div class>
+  <div>
     <p v-if="fail"> </p>
     <p v-else>  {{messagefail}} </p>
-    <div id="form">
-       <div class="field">
+      <div id="form">
+         <div class="field">
           <div class="control">
             <br>
             <input class="input" type="text" name="username" v-model="username" id="username"  placeholder="Pseudo" required>
@@ -15,9 +14,11 @@
         </div>
           <br>
             <a class="button is-primary" v-on:click.prevent="identification"> Connexion </a>
-    </div>
+       </div>
+      <a href="" class="forget is-size-8"> Mot de passe oublié ? </a>
   </div>
 </template>
+
 <script>
 export default {
   name: 'HomeForm',
@@ -25,23 +26,40 @@ export default {
     return {
       username: '',
       password: '',
-      correctusername: 'sarah',
-      correctpassword: 'adagio',
       fail: true,
       messagefail: 'Echec de la connexion'
     }
   },
+  computed: {
+    correctusername () {
+      return this.$store.getters.correctusername
+    },
+    correctpassword () {
+      return this.$store.getters.correctpassword
+    },
+    admin_user () {
+      return this.$store.getters.admin_user
+    },
+    admin_password () {
+      return this.$store.getters.admin_password
+    }
+  },
   methods: {
     identification: function () {
-      if (this.username !== this.correctusername || this.password !== this.correctpassword) {
-        this.fail = false
-      } else {
+      if (this.username === this.admin_user || this.password === this.admin_password) {
+        this.$store.dispatch('turn_connected')
+        this.$store.dispatch('turn_admin')
+        this.$router.push('/config')
+      } else if (this.username === this.correctusername || this.password === this.correctpassword) {
         this.$store.dispatch('turn_connected')
         this.$router.push('/')
+      } else {
+        this.fail = false
       }
     }
   }
 }
+
 </script>
 <style scoped lang="scss">
 label {
@@ -50,7 +68,8 @@ label {
 #form {
 position:center;
 width:300px;
-height: 500px;
+height: 200px;
 margin: 0 auto;
 }
+
 </style>

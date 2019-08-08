@@ -5048,6 +5048,11 @@ lodash.memoize@^4.1.2:
   resolved "https://registry.yarnpkg.com/lodash.memoize/-/lodash.memoize-4.1.2.tgz#bcc6c49a42a2840ed997f323eada5ecd182e0bfe"
   integrity sha1-vMbEmkKihA7Zl/Mj6tpezRguC/4=
 
+lodash.merge@^4.6.1:
+  version "4.6.2"
+  resolved "https://registry.yarnpkg.com/lodash.merge/-/lodash.merge-4.6.2.tgz#558aa53b43b661e1925a0afdfa36a9a1085fe57a"
+  integrity sha512-0KpjqXRVvrYyCsX1swR/XTK0va6VQkQM6MNo7PqW77ByjAhoARA8EfrP1N4+KlKj8YS0ZUCtRT/YUuhyYDujIQ==
+
 lodash.tail@^4.1.1:
   version "4.1.1"
   resolved "https://registry.yarnpkg.com/lodash.tail/-/lodash.tail-4.1.1.tgz#d2333a36d9e7717c8ad2f7cacafec7c32b444664"
@@ -8202,6 +8207,11 @@ vue-loader@^15.7.0:
     vue-hot-reload-api "^2.3.0"
     vue-style-loader "^4.1.0"
 
+vue-localstorage@^0.6.2:
+  version "0.6.2"
+  resolved "https://registry.yarnpkg.com/vue-localstorage/-/vue-localstorage-0.6.2.tgz#7f84c99f4ce0b6be23b16c1fab194d4d67182456"
+  integrity sha512-29YQVVkIdoS6BZBCJAyu9d0OR0eKSm5gk5OjsLssV1+NM4zJnf9cxhN1AVeXkUHJLqOonECweuaR8PZ2x307dw==
+
 vue-router@^3.0.3:
   version "3.0.7"
   resolved "https://registry.yarnpkg.com/vue-router/-/vue-router-3.0.7.tgz#b36ca107b4acb8ff5bc4ff824584059c23fcb87b"
@@ -8232,6 +8242,14 @@ vue@^2.6.10:
   version "2.6.10"
   resolved "https://registry.yarnpkg.com/vue/-/vue-2.6.10.tgz#a72b1a42a4d82a721ea438d1b6bf55e66195c637"
   integrity sha512-ImThpeNU9HbdZL3utgMCq0oiMzAkt1mcgy3/E6zWC/G6AaQoeuFdsl9nDhTDU3X1R6FK7nsIUuRACVcjI+A2GQ==
+
+vuex-persist@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/vuex-persist/-/vuex-persist-2.0.1.tgz#411ef2becc04db3f222779f7c5d2e6615cbdd4ca"
+  integrity sha512-V3WSBYmxcAP6ei0VVt2lxGloeWJZgk1Ao4r+iOxLMhAv+UYIK91qbjwvqk6Xr3tAi052jzSwn8aoamtuz8ArsQ==
+  dependencies:
+    flatted "^2.0.0"
+    lodash.merge "^4.6.1"
 
 vuex@^3.0.1:
   version "3.1.1"

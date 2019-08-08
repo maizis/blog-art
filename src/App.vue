@@ -19,9 +19,15 @@
           <a class="navbar-item">
              <a v-if="isConnected"><router-link to="/posts"> Post</router-link></a>
           </a>
+          <a class="navbar-item">
+             <a v-if="isConnected && isAdmin"><router-link to="/config"> Config </router-link></a>
+          </a>
         </div>
         <div class="navbar-end">
           <div class="navbar-item">
+            <p v-if="isAdmin"> Vous êtes Admin </p>
+            <a class="navbar-item">
+          </a>
             <div class="buttons">
               <a class="button is-outline">
                 <router-link v-if="!isConnected" to="/login"> <strong>Connexion</strong></router-link>
@@ -44,11 +50,15 @@ export default {
   computed: {
     isConnected () {
       return this.$store.getters.isConnected
+    },
+    isAdmin () {
+      return this.$store.getters.isAdmin
     }
   },
   methods: {
     logout: function () {
       this.$store.dispatch('turn_deconnected')
+      this.$store.dispatch('turn_deconnected_admin')
     }
   }
 }

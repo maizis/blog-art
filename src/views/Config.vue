@@ -1,47 +1,51 @@
+
 <template>
+<div>
   <div class="section">
-    <div class="container">
+    <div>
       <div class="columns">
-        <div class="column is-8">
-          <div class="card" v-for="post in posts" :key=post.id>
+        <div class="column is-4">
+           <div class="card">
             <header class="card-header">
-              <p class="card-header-title">
-                {{ post.title }}
-              </p>
+              <p class="card-header-title">Section de modification</p>
             </header>
             <div class="card-content">
               <div class="content">
-                {{ post.body }}
               </div>
             </div>
           </div>
-        </div>
+         </div>
          <div class="column is-4">
-          <div class="card">
+           <div class="card">
             <header class="card-header">
-              <div class="card-header-title">
-                <p>Les 10 derniers posts</p>
-              </div>
+              <p class="card-header-title">Section de modification</p>
             </header>
             <div class="card-content">
-              <div>
-                <ul>
-                  <li v-for="last_post in last_posts" :key=last_post.id>
-                    {{last_post.title}}
-                  </li>
-                </ul>
-             </div>
+              <div class="content">
+              </div>
             </div>
           </div>
+         </div>
+         <div class="column is-4">
+           <div class="card">
+            <header class="card-header">
+              <p class="card-header-title">Section de modification</p>
+            </header>
+            <div class="card-content">
+              <div class="content">
+              </div>
+            </div>
+          </div>
+         </div>
         </div>
-        </div>
-      </div>
-    </div>
+       </div>
+     </div>
+</div>
 </template>
 <script>
 
 export default {
-  name: 'posts',
+  name: 'config',
   mounted () {
     this.$store.dispatch('showPosts')
   },
@@ -70,5 +74,8 @@ li {
 }
 ul {
   list-style: inside disc;
+}
+.card {
+height: 400px;
 }
 </style>
