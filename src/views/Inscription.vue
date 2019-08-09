@@ -1,29 +1,33 @@
 <template>
-  <div class="home1">
-    <img id="img1" alt="Vue logo" src="../assets/image4.png">
+  <div class="inscription">
+    <img id="imgAstro" alt="imgAstro" src="../assets/imgAstro.png">
       <SignupForm/>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
 import SignupForm from '@/components/SignupForm.vue'
 
 export default {
   name: 'signup',
+
   components: {
     SignupForm
   },
+
   data () {
     return {
     }
   }
 }
 </script>
+
 <style>
-#img1 {
+#imgAstro {
   width:200px;
   margin-top:40px;
 }
-
+.inscription {
+  margin-top:10px;
+}
 </style>

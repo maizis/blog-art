@@ -1,14 +1,13 @@
 <template>
-  <div class="home3">
+  <div class="connexion">
     <div>
-      <img id="img2" alt="Vue logo" src="../assets/image4.png">
+      <img id="imgAstro" alt="imgAstro" src="../assets/imgAstro.png">
     </div>
-      <LoginForm/>
+    <LoginForm/>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
 import LoginForm from '@/components/LoginForm.vue'
 
 export default {
@@ -16,11 +15,7 @@ export default {
   components: {
     LoginForm
   },
-  data () {
-    return {
-      turnform: true
-    }
-  },
+
   computed: {
     isConnected () {
       return this.$store.getters.isConnected
@@ -28,12 +23,12 @@ export default {
   }
 }
 </script>
+
 <style>
-#img2 {
+#imgAstro {
   width:200px;
 }
-.home3 {
-  position:center;
-  margin-top:40px;
+.connexion {
+  margin-top:10px;
 }
 </style>

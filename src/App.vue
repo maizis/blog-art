@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <nav class="navbar" role="navigation" aria-label="main navigation">
+
       <div class="navbar-brand">
         <a class="navbar-item" href="https://bulma.io">
           <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28">
@@ -11,6 +12,7 @@
           <span aria-hidden="true"></span>
         </a>
       </div>
+
       <div id="navbarBasicExample" class="navbar-menu">
         <div class="navbar-start">
           <a class="navbar-item">
@@ -23,25 +25,25 @@
              <a v-if="isConnected && isAdmin"><router-link to="/config"> Config </router-link></a>
           </a>
         </div>
+
         <div class="navbar-end">
           <div class="navbar-item">
-            <p v-if="isAdmin"> Vous êtes Admin </p>
+            <p v-if="isAdmin"> Log as : admin </p>
             <a class="navbar-item">
           </a>
             <div class="buttons">
               <a class="button is-outline">
-                <router-link v-if="!isConnected" to="/login"> <strong>Connexion</strong></router-link>
-                 <a href="" v-else v-on:click="logout"> <strong>Déconnexion</strong></a>
+                <router-link v-if="!isConnected" to="/login"> <strong> Connexion </strong> </router-link>
+                 <a href="" v-else v-on:click="logout"> <strong> Déconnexion </strong> </a>
               </a>
-              <a class="button is-outline" v-if="!isConnected">  <router-link to="/signup"> Inscription </router-link> </a>
+              <a class="button is-outline" v-if="!isConnected"> <router-link to="/signup"> Inscription </router-link> </a>
             </div>
           </div>
         </div>
       </div>
+
     </nav>
-    <div id="nav">
-    </div>
-    <router-view/>
+  <router-view/>
   </div>
 </template>
 
@@ -55,10 +57,10 @@ export default {
       return this.$store.getters.isAdmin
     }
   },
+
   methods: {
     logout: function () {
-      this.$store.dispatch('turn_deconnected')
-      this.$store.dispatch('turn_deconnected_admin')
+      this.$store.dispatch('turnDeconnected')
     }
   }
 }

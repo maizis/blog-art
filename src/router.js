@@ -2,8 +2,8 @@ import Vue from 'vue'
 import store from '@/store'
 import Home from './views/Home.vue'
 import Login from './views/Connexion.vue'
-import signup from './views/Inscription.vue'
-import config from './views/Config.vue'
+import Signup from './views/Inscription.vue'
+import Config from './views/Config.vue'
 import Posts from './views/Posts.vue'
 import Router from 'vue-router'
 
@@ -24,12 +24,12 @@ const router = new Router({
     {
       path: '/signup',
       name: 'signup',
-      component: signup
+      component: Signup
     },
     {
       path: '/config',
       name: 'config',
-      component: config
+      component: Config
     },
     {
       path: '/posts',
