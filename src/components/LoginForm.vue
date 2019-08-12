@@ -25,7 +25,7 @@ export default {
 
   data () {
     return {
-      userame: '',
+      username: '',
       password: '',
       fail: false,
       messagefail: 'Echec de la connexion'

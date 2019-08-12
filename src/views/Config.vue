@@ -33,9 +33,10 @@
             </header>
             <div class="card-content">
               <div class="content">
-              </div>
+
               </div>
             </div>
+          </div>
         </div>
       </div>
     </div>

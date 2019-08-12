@@ -5,6 +5,7 @@ import Login from './views/Connexion.vue'
 import Signup from './views/Inscription.vue'
 import Config from './views/Config.vue'
 import Posts from './views/Posts.vue'
+import Article from './components/Article.vue'
 import Router from 'vue-router'
 
 Vue.use(Router)
@@ -30,6 +31,11 @@ const router = new Router({
       path: '/config',
       name: 'config',
       component: Config
+    },
+    {
+      path: '/posts/:id',
+      name: 'article',
+      component: Article
     },
     {
       path: '/posts',
