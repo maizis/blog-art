@@ -1,16 +1,15 @@
 <template>
 <div>
   <div class="section">
-    <div class="container">
-      <div class="columns">
+      <div class="columns is-centered">
 
         <div class="column is-8">
           <div class="card" v-for="(post, index) in posts" :key=post.id>
             <header class="card-header">
-              <p class="card-header-title"> {{ post.title }} </p>
+              <router-link :to="'/posts/' + index">  <p class="card-header-title"> {{ post.title }} </p> </router-link>
             </header>
             <div class="card-content has-text-left">
-             <router-link :to="'/posts/' + index">  <div class="content"> {{ post.body }} </div> </router-link>
+              <div class="content"> {{ post.body }} </div>
             </div>
           </div>
         </div>
@@ -37,7 +36,6 @@
       </div>
     </div>
   </div>
-</div>
 </template>
 
 <script>
