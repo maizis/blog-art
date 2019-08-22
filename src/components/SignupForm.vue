@@ -7,7 +7,7 @@
           <input class="input" type="text" name="username" v-model="username" id="username"  placeholder="Pseudo" required>
             <br>
             <br>
-          <input class="input" type="text" name="Email" v-model="mail" id="mail"  placeholder="E-mail" required>
+          <input class="input" type="email" name="Email" v-model="mail" id="mail"  placeholder="E-mail" required>
             <br>
             <br>
           <input class="input" type="password" name="password" v-model="password" id="password"  placeholder="Password" required>

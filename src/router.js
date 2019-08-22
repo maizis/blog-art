@@ -1,11 +1,14 @@
 import Vue from 'vue'
 import store from '@/store'
-import Home from './views/Home.vue'
+import homeUser from './components/HomeUser.vue'
+import Admin from './views/Admin.vue'
 import Login from './views/Connexion.vue'
 import Signup from './views/Inscription.vue'
-import Config from './views/Config.vue'
 import Posts from './views/Posts.vue'
 import Article from './components/Article.vue'
+import AdminHome from './components/AdminHome.vue'
+import AdminUser from './components/AdminUser.vue'
+import AdminPost from './components/AdminPost.vue'
 import Router from 'vue-router'
 
 Vue.use(Router)
@@ -14,8 +17,33 @@ const router = new Router({
   routes: [
     {
       path: '/',
-      name: 'home',
-      component: Home
+      name: 'HomeUser',
+      component: homeUser
+    },
+    {
+      path: '/admin',
+      component: Admin,
+      beforeEnter: (to, from, next) => {
+        if (store.getters.isAdmin) {
+          next()
+        } else {
+          next('/')
+        }
+      },
+      children: [
+        { path: '/',
+          name: 'AdminHome',
+          component: AdminHome
+        },
+        { path: 'user',
+          name: 'AdminUser',
+          component: AdminUser
+        },
+        { path: 'post',
+          name: 'AdminPost',
+          component: AdminPost
+        }
+      ]
     },
     {
       path: '/login',
@@ -28,14 +56,16 @@ const router = new Router({
       component: Signup
     },
     {
-      path: '/config',
-      name: 'config',
-      component: Config
-    },
-    {
       path: '/posts/:id',
       name: 'article',
-      component: Article
+      component: Article,
+      beforeEnter: (to, from, next) => {
+        if (store.getters.isConnected) {
+          next()
+        } else {
+          next('/')
+        }
+      }
     },
     {
       path: '/posts',

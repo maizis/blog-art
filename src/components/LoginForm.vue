@@ -52,7 +52,7 @@ export default {
       if (this.username === this.adminUser || this.password === this.adminPassword) {
         this.$store.dispatch('turnConnected')
         this.$store.dispatch('turnAdmin')
-        this.$router.push('/config')
+        this.$router.push('/admin')
       } else if (this.username === this.randomUser || this.password === this.randomPassword) {
         this.$store.dispatch('turnConnected')
         this.$router.push('/')

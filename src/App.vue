@@ -18,22 +18,25 @@
           <a class="navbar-item">
            <router-link to="/"> Home </router-link>
           </a>
+
           <a class="navbar-item">
              <a v-if="isConnected"><router-link to="/posts"> Post</router-link></a>
           </a>
-          <a class="navbar-item">
-             <a v-if="isConnected && isAdmin"><router-link to="/config"> Config </router-link></a>
+           <a class="navbar-item">
+             <a v-if="isConnected && isAdmin"><router-link to="/admin">Admin</router-link></a>
           </a>
+
         </div>
 
         <div class="navbar-end">
           <div class="navbar-item">
             <p v-if="isAdmin"> Log as : admin </p>
+
             <a class="navbar-item">
           </a>
             <div class="buttons">
               <a class="button is-outline">
-                <router-link v-if="!isConnected" to="/login"> <strong> Connexion </strong> </router-link>
+                <router-link v-if="!isConnected" to="login"> <strong> Connexion </strong> </router-link>
                  <a href="" v-else v-on:click="logout"> <strong> Déconnexion </strong> </a>
               </a>
               <a class="button is-outline" v-if="!isConnected"> <router-link to="/signup"> Inscription </router-link> </a>
@@ -41,9 +44,8 @@
           </div>
         </div>
       </div>
-
     </nav>
-  <router-view/>
+   <router-view/>
   </div>
 </template>
 
@@ -65,9 +67,13 @@ export default {
   }
 }
 </script>
-
 <style lang="scss">
 #app {
-  text-align: center;
 }
+.footer {
+    clear: both;
+    position: relative;
+    height: 100px;
+    margin-bottom: 0px;
+  }
 </style>

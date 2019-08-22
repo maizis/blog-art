@@ -4,7 +4,7 @@
       <div class="columns is-centered">
 
         <div class="column is-8">
-          <div class="card" v-for="(post, index) in posts" :key=post.id>
+          <div class="card" v-for="(post, index) in posts.slice(-15)" :key=post.id>
             <header class="card-header">
               <router-link :to="'/posts/' + index">  <p class="card-header-title"> {{ post.title }} </p> </router-link>
             </header>

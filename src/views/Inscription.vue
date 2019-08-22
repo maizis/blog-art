@@ -29,5 +29,6 @@ export default {
 }
 .inscription {
   margin-top:10px;
+  text-align: center
 }
 </style>

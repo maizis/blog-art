@@ -1,6 +1,8 @@
 <template>
-  <div> <div class="idArticle"> </div>
+  <div>
+
     <div class="section">
+      <div class="idArticle has-text-left">  <router-link to="/posts"> <strong> Back to Posts </strong> </router-link></div>
       <div class="columns is-centered">
 
         <div class="column is-8">
@@ -125,8 +127,9 @@ export default {
 
   methods: {
     addComment: function () {
-      console.table(this.comments)
       this.comments.push({ pseudo: this.randomUser, body: this.commentaire })
+      this.commentaire = ''
+      console.table(this.comments)
     }
   }
 }
@@ -164,7 +167,7 @@ ul {
   padding:10px
 }
 .idArticle {
-  margin-top:10px
+  margin-bottom:20px;
 }
 
 </style>
