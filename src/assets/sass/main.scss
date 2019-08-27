@@ -28,19 +28,21 @@ $size-1: 3rem;
 $family-sans-serif: "Nunito", sans-serif;
 $grey-dark: $brown;
 $grey-light: $beige-light;
-$link: $pink;
+$link: black;
 $widescreen-enabled: false;
 $fullhd-enabled: false;
 
 // Update some of Bulma's component variables
-$body-background-color: $pink-light;
+$body-background-color:white;
 $control-border-width: 2px;
-$input-border-color: transparent;
+$input-border-color: #D0D1CD;
 $input-shadow: none;
 $footer-padding : 0rem 0rem 0rem;
 $footer-background-color: $white-bis;
 $control-radius:2px;
-
+$footer-padding: 1rem 1.5rem 6rem;
+$input-focus-box-shadow-color:none;
+$input-focus-border-color:none;
 
 @import "bulma/bulma.sass";
 

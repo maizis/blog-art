@@ -4,7 +4,7 @@
         <p class="menu-label"> GENERAL </p>
           <ul class="menu-list">
             <li><a> <router-link to="/admin">Informations</router-link></a></li>
-            <li><a> <router-link to="">Securité </router-link></a></li>
+            <li><a> <router-link to="/admin/securite">Securité </router-link></a></li>
           </ul>
           <p class="menu-label"> ADMINISTRATION </p>
           <ul class="menu-list">

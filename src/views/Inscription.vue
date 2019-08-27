@@ -1,6 +1,6 @@
 <template>
   <div class="inscription">
-    <img id="imgAstro" alt="imgAstro" src="../assets/imgAstro.png">
+
       <SignupForm/>
   </div>
 </template>

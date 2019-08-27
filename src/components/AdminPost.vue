@@ -24,28 +24,22 @@
       </template>
     </ModalForm>
       <br>
-      <table class="table is-bordered  is-fullwidth">
-      <thead class="user">
-        <th>Id_Article </th>
-        <th>Titre</th>
-        <th>Sous-titre</th>
-        <th>Contenu</th>
-        <th> Date_Upload</th>
-        <th> Like Count </th>
-        <th>Delete Article</th>
-      </thead>
-      <tbody class="has-text-centered">
-        <tr v-for="post in posts.slice(0,5)" :key=post.id>
-          <th> {{ post.id }} </th>
-          <td>  {{ post.title }} </td>
-          <td> Ceci est un sous-titre </td>
-          <td>  {{ post.body }} </td>
-          <td> 23/20/2018</td>
-          <td> 45 </td>
-          <td><a class="button is-small"> X </a> </td>
-        </tr>
-        </tbody>
-    </table>
+      <table class="table is-fullwidth table is-striped">
+        <thead class="user">
+          <th>Id </th>
+          <th>Titre</th>
+          <th>Sous-titre</th>
+          <th>Delete</th>
+        </thead>
+        <tbody>
+          <tr v-for="post in posts.slice(0,10)" :key=post.id>
+            <th> {{ post.id }} </th>
+            <td style="max-width:200px">  {{ post.title }} </td>
+            <td style="max-width:200px">{{ post.body }} </td>
+            <td > X </td>
+          </tr>
+          </tbody>
+      </table>
   </div>
 </template>
 
@@ -60,10 +54,10 @@ export default {
     return {
       title: '',
       subtitle: '',
-      bodyarticle: '',
+      bodyarticle: ''
     }
   },
-   mounted () {
+  mounted () {
     this.$store.dispatch('showPosts')
   },
   computed: {
@@ -81,4 +75,17 @@ export default {
 </script>
 
 <style>
+td {
+  overflow:hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.tablecontent {
+  background-color:white;
+  max-height:350px;
+  overflow:scroll;
+  border-style: solid;
+  border-width: 15px;
+  border-color:white;
+}
 </style>

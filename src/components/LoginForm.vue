@@ -1,11 +1,13 @@
 <template>
-  <div>
+  <div class="has-text-weight-light">
     <p v-if="!fail"> </p>
     <p v-else> {{ messagefail }} </p>
+    <p style="margin-top:30px "> LE CONTENU EST RESERVÉ. </p>
+    <p class="is-size-7"> CONNECTEZ-VOUS POUR ACCEDER AU ARTICLE </p>
+    <br>
       <div id="form">
         <div class="field">
           <div class="control">
-            <br>
             <input class="input" type="text" name="username" v-model="username" id="username"  placeholder="Pseudo" required>
             <br>
             <br>
@@ -13,8 +15,9 @@
           </div>
         </div>
           <br>
-          <a class="button is-primary" v-on:click.prevent="identification"> Connexion </a>
+          <a class="button is-overload" v-on:click.prevent="identification"> Connexion </a>
       </div>
+
     <a href="" class="forget is-size-8"> Mot de passe oublié ? </a>
   </div>
 </template>

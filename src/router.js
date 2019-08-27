@@ -9,6 +9,7 @@ import Article from './components/Article.vue'
 import AdminHome from './components/AdminHome.vue'
 import AdminUser from './components/AdminUser.vue'
 import AdminPost from './components/AdminPost.vue'
+import AdminSecu from './components/AdminSecu.vue'
 import Router from 'vue-router'
 
 Vue.use(Router)
@@ -42,6 +43,10 @@ const router = new Router({
         { path: 'post',
           name: 'AdminPost',
           component: AdminPost
+        },
+        { path: 'securite',
+          name: 'AdminSecu',
+          component: AdminSecu
         }
       ]
     },

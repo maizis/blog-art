@@ -2,24 +2,23 @@
   <div>
 
     <slot name="open">
-      <a class="button  is-primary" v-on:click="showModal"><slot name="add"> </slot></a>
+      <a class="button is-is-light" v-on:click="showModal"><slot name="add"> </slot></a>
     </slot>
 
     <slot name="search">
       <div class="is-pulled-right">
-        <div class="field has-addons">
-          <div class="control">
-             <input class="input" type="text" placeholder="Ecrivez ici..">
+         <div class="field has-addons">
+            <div class="control">
+              <input class="input" type="text" placeholder="Find a repository">
+            </div>
+            <div class="control">
+              <a class="button is-light">
+                Search
+              </a>
+            </div>
           </div>
-          <div class="control">
-            <a class="button is-info">
-            <slot name="search"> Search </slot>
-           </a>
-          </div>
-        </div>
       </div>
     </slot>
-
 
     <div class="modal is-active" v-if="isShow">
       <div class="modal-background"></div>
@@ -40,21 +39,20 @@
 </template>
 
 <script>
-  export default {
-    name: 'ModalForm',
-    data () {
-      return {
-        isShow: false
-      }
-    },
-    methods: {
-      showModal: function () {
-        return this.isShow = true
-      },
-      hideModal: function () {
-        return this.isShow = false
-      }
+export default {
+  name: 'ModalForm',
+  data () {
+    return {
+      isShow: false
     }
-  };
+  },
+  methods: {
+    showModal: function () {
+      this.isShow = true
+    },
+    hideModal: function () {
+      this.isShow = false
+    }
+  }
+}
 </script>
-

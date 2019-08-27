@@ -1,40 +1,66 @@
 <template>
-<div>
-  <div class="section">
-      <div class="columns is-centered">
-
-        <div class="column is-8">
-          <div class="card" v-for="(post, index) in posts.slice(-15)" :key=post.id>
-            <header class="card-header">
-              <router-link :to="'/posts/' + index">  <p class="card-header-title"> {{ post.title }} </p> </router-link>
-            </header>
-            <div class="card-content has-text-left">
-              <div class="content"> {{ post.body }} </div>
-            </div>
+  <div>
+    <div class="tile is-ancestor" style="margin-top:20px">
+      <div class="tile is-parent">
+         <div class="tile"> Barre de recherche
           </div>
-        </div>
-
-        <div class="column is-4">
-          <div class="card">
-            <header class="card-header">
-              <div class="card-header-title">
-                <p>Les 10 derniers posts</p>
-              </div>
-            </header>
-            <div class="card-content">
-              <div>
-                <ul>
-                  <li v-for="lastPost in lastPosts" :key=lastPost.id>
-                     {{ lastPost.title }}
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-
       </div>
     </div>
+
+    <div class="tile is-ancestor" style="margin-top:20px">
+      <div class="tile is-parent">
+        <div class="tile" style="margin-right:40px">
+          <div class="card">
+            <div class="card-image">
+            <figure class="image is-2by1">
+              <img src="https://bulma.io/images/placeholders/1280x960.png">
+            </figure>
+          </div>
+          <div class="card-content">
+            <div class="media">
+              <div class="media-content">
+                <p class="title is-6">L'art contemporain en Allemagne </p>
+                <p class="subtitle is-7"> Une histoire d'art </p>
+              </div>
+            </div>
+            <div class="content">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              Phasellus nec iaculis mauris [...]
+              <br>
+              <time class="is-pulled-right is-size-7" datetime="2016-1-1"> 01 Janvier 2016</time>
+              <br>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tile">
+          <div class="card">
+            <div class="card-image">
+            <figure class="image is-2by1">
+              <img src="https://bulma.io/images/placeholders/1280x960.png">
+            </figure>
+          </div>
+          <div class="card-content">
+            <div class="media">
+              <div class="media-content">
+                <p class="title is-6">L'art contemporain en Allemagne </p>
+                <p class="subtitle is-7"> Une histoire d'art </p>
+              </div>
+            </div>
+            <div class="content">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              Phasellus nec iaculis mauris [...]
+              <br>
+              <time class="is-pulled-right is-size-7" datetime="2016-1-1"> 01 Janvier 2016</time>
+              <br>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
   </div>
 </template>
 
@@ -62,11 +88,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.card {
-  &:not(:last-child) {
-    margin-bottom: 1rem;
-  }
-}
 li {
   text-align: left;
   overflow:hidden;

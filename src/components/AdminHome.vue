@@ -2,41 +2,60 @@
   <div>
 
     <div class="tile is-ancestor">
-  <div class="tile is-4 is-vertical is-parent">
-    <div class="tile is-child box">
-      <div class="title has-text-centered">  23.342 LIKES </div>
-    </div>
-    <div class="tile is-child box">
-      <div class="title has-text-centered">  Nombre d'inscrit :  </div>
+      <div class="tile is-4 is-vertical is-parent">
+            <div class="tile is-child has-background-white">
+          <div class="title has-text-centered" style="margin:10px"> <img id="user" alt="user" src="../assets/user.png"> <br> 341 Inscrits
+          </div>
+        </div>
+        <div class="tile is-child has-background-white">
+          <div class="title" style="margin:10px">
+            <p class="has-text-weight-light is-size-5"> Likes</p>
+            <p class=" is-size-2">23.342</p>
+            <p class="is-size-6 is-pulled-right has-text-weight-light" style="margin-bottom:10px">+2,4%</p>
+            <img id="spark " alt="user" src="../assets/spark.png">
+
+          </div>
+        </div>
+      </div>
+    <div class="tile is-parent">
+      <div class="tile is-child has-background-white tablecontent">
+          <p> Most views articles </p>
+          <br>
+            <table class="table is-fullwidth table is-striped">
+              <thead class="user">
+                <th>Id </th>
+                <th>Titre</th>
+                <th>Sous-titre</th>
+                <th>Likes </th>
+              </thead>
+              <tbody class="has-text-centered">
+                <tr v-for="post in posts.slice(0,10)" :key=post.id>
+                  <th> {{ post.id }} </th>
+                  <td style="max-width:200px">  {{ post.title }} </td>
+                  <td style="max-width:200px">{{ post.body }} </td>
+                  <td> 320 </td>
+                </tr>
+                </tbody>
+            </table>
+      </div>
     </div>
   </div>
-  <div class="tile is-parent">
-    <div class="tile is-child box">
-      <p class="title"> ARTICLES LES PLUS LIKÉS </p>
-            <table class="table is-bordered  is-fullwidth">
-      <thead class="user">
-        <th>Id_Article </th>
-        <th>Titre</th>
-        <th>Sous-titre</th>
-      </thead>
-      <tbody class="has-text-centered">
-        <tr v-for="post in posts.slice(0,4)" :key=post.id>
-          <th> {{ post.id }} </th>
-          <td>  {{ post.title }} </td>
-          <td> Ceci est un sous-titre </td>
-        </tr>
-        </tbody>
-    </table>
+  <div class="tile is-ancestor">
+    <div class="tile is-parent">
+      <div class="tile is-child has-background-white">
+         <div class="title">
+            <p class="has-text-weight-light is-size-5"> Timeline</p>
+
+          </div>
+      </div>
     </div>
   </div>
 </div>
-
-  </div>
 </template>
 
 <script>
 export default {
-  name: 'HomeAdmin',
+  name: 'AdminHome',
   computed: {
     posts () {
       return this.$store.getters.posts
@@ -54,16 +73,20 @@ export default {
     margin-bottom: 1rem;
   }
 }
-li {
-  text-align: left;
+#heart, #user {
+  width: 100px;
+}
+td {
   overflow:hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-ul {
-  list-style: inside disc;
-}
-.card {
-  height: 550px;
+.tablecontent {
+  background-color:white;
+  max-height:350px;
+  overflow:scroll;
+  border-style: solid;
+  border-width: 15px;
+  border-color:white;
 }
 </style>

@@ -1,7 +1,6 @@
 <template>
   <div class="connexion">
     <div>
-      <img id="imgAstro" alt="imgAstro" src="../assets/imgAstro.png">
     </div>
     <LoginForm/>
   </div>

@@ -1,5 +1,7 @@
 <template>
-  <div>
+  <div class="has-text-weight-light">
+        <p style="margin-top:30px "> LE CONTENU EST RESERVÉ. </p>
+    <p class="is-size-7"> INSCRIVEZ-VOUS POUR ACCEDER AU ARTICLE </p>
     <div id="form">
       <div class="field">
         <div class="control">
@@ -13,7 +15,7 @@
           <input class="input" type="password" name="password" v-model="password" id="password"  placeholder="Password" required>
             <br>
             <br>
-          <a class="button is-primary" v-on:click.prevent="inscription"> Inscription </a>
+          <a class="button is-overload" v-on:click.prevent="inscription"> Inscription </a>
         </div>
       </div>
     </div>

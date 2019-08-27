@@ -1,8 +1,7 @@
 <template>
   <div>
     <ModalForm>
-
-      <template v-slot:add> AJOUTER UN UTILISATEUR
+      <template v-slot:add> Ajouter un utilisateur
       </template>
 
       <template v-slot:content>
@@ -26,7 +25,7 @@
 
     </ModalForm>
       <br>
-    <table class="table is-bordered  is-fullwidth">
+    <table class="table is-fullwidth table is-striped">
       <thead class="user">
         <th>Id_user </th>
         <th>Pseudo</th>
@@ -61,9 +60,9 @@ export default {
     return {
       username: '',
       mail: '',
-      password: '',
+      password: ''
     }
-  },
+  }
 }
 </script>
 
