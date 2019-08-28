@@ -107,7 +107,7 @@ export default {
       commentaire: '',
       day: 'date du jour',
       delete: false,
-      liked:false
+      liked: false
     }
   },
   mounted () {
@@ -140,7 +140,7 @@ export default {
     },
     dislike: function () {
       this.liked = false
-    },
+    }
   }
 }
 </script>

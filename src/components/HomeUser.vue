@@ -12,34 +12,11 @@
         </div>
         <br>
         <p class="is-size-7" style="margin:10px"> ARTICLE DE LA SEMAINE </p>
+
         <div class="tile is-ancestor">
           <div class="tile is-parent">
-            <div class="tile" style="margin-right:30px">
-              <div class="card">
-                <div class="card-image">
-                  <figure class="image is-2by1">
-                    <img src="http://lorempixel.com/640/360">
-                  </figure>
-                </div>
-                <div class="card-content">
-                  <div class="media">
-                    <div class="media-content">
-                      <p class="title is-6">L'art contemporain en Allemagne </p>
-                      <p class="subtitle is-7"> Une histoire d'art </p>
-                    </div>
-                  </div>
-                  <div class="content">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Phasellus nec iaculis mauris [...]
-                    <br>
-                    <time class="is-pulled-right is-size-7" datetime="2016-1-1"> 01 Janvier 2016</time>
-                    <br>
-                  </div>
-                </div>
-              </div>
-            </div>
-              <div class="tile" style="margin-right:10px">
-                <div class="card">
+              <div class="tile" >
+                <div class="card" v-for="post in posts.slice(-2)" :key=post.id style="margin-right:10px">
                   <div class="card-image">
                       <figure class="image is-2by1">
                       <img src="http://lorempixel.com/640/360">
@@ -48,13 +25,12 @@
                 <div class="card-content">
                   <div class="media">
                     <div class="media-content">
-                      <p class="title is-6">L'art contemporain en Allemagne </p>
+                      <p class="title is-6"> {{post.title}} </p>
                       <p class="subtitle is-7"> Une histoire d'art </p>
                     </div>
                   </div>
-                  <div class="content">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      Phasellus nec iaculis mauris [...]
+                  <div class="extrait content is-capitalized">
+                      {{post.body}}
                     <br>
                     <time class="is-pulled-right is-size-7" datetime="2016-1-1"> 01 Janvier 2016</time>
                     <br>
@@ -64,6 +40,7 @@
             </div>
           </div>
         </div>
+
         <div class="container presentation">
           <p class="is-size-5 has-text-centered">Excepteur sint occaecat cupidatat</p>
           <br>
@@ -99,11 +76,17 @@ export default {
       mailSend: false
     }
   },
+  mounted () {
+    this.$store.dispatch('showPosts')
+  },
 
   computed: {
     isConnected () {
       return this.$store.getters.isConnected
-    }
+    },
+    posts () {
+      return this.$store.getters.posts
+    },
   },
 
   methods: {
@@ -126,6 +109,18 @@ export default {
 }
 .home {
   margin-top:20px
+}
+.extrait {
+  max-height: 20px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.card {
+  width: 600px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+
 }
 
 </style>
