@@ -8,11 +8,9 @@
               <div class="tile is-child box">
                 <div class=" has-text-centered" style="margin:10px"> <img id="user" alt="user" src="../assets/user.png">
                 <a class="button is-small is-pulled-right">
-                    + Add image
                   </a>
                 </div>
               </div>
-
             </div>
           </div>
           </div>

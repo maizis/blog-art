@@ -22,6 +22,7 @@
           </div>
         </div>
       </template>
+      <template v-slot:submit> <a v-on:click="test"> Ajouter </a></template>
     </ModalForm>
       <br>
       <table class="table is-fullwidth table is-striped">
@@ -63,12 +64,15 @@ export default {
   computed: {
     posts () {
       return this.$store.getters.posts
+    },
+    lastPosts () {
+      return this.posts.slice(0)
     }
   },
   methods: {
     show: function () {
       console.log(this.posts)
-    }
+    },
 
   }
 }

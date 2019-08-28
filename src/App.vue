@@ -15,9 +15,14 @@
           <a class="navbar-item">
            <router-link to="/">  Home  </router-link>
           </a>
+
           <a class="navbar-item" v-if="isConnected">
              <a><router-link to="/posts"> Articles </router-link></a>
           </a>
+          <a class="navbar-item has-text-grey-light" v-else>
+             Articles
+          </a>
+
            <a class="navbar-item" v-if="isConnected">
              <a><router-link to="/posts"> About </router-link></a>
           </a>

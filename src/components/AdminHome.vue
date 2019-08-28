@@ -1,24 +1,9 @@
 <template>
   <div>
-
     <div class="tile is-ancestor">
-      <div class="tile is-4 is-vertical is-parent">
-            <div class="tile is-child has-background-white">
-          <div class="title has-text-centered" style="margin:10px"> <img id="user" alt="user" src="../assets/user.png"> <br> 341 Inscrits
-          </div>
-        </div>
-        <div class="tile is-child has-background-white">
-          <div class="title" style="margin:10px">
-            <p class="has-text-weight-light is-size-5"> Likes</p>
-            <p class=" is-size-2">23.342</p>
-            <p class="is-size-6 is-pulled-right has-text-weight-light" style="margin-bottom:10px">+2,4%</p>
-            <img id="spark " alt="user" src="../assets/spark.png">
 
-          </div>
-        </div>
-      </div>
     <div class="tile is-parent">
-      <div class="tile is-child has-background-white tablecontent">
+      <div class="tile is-child tablecontent">
           <p> Most views articles </p>
           <br>
             <table class="table is-fullwidth table is-striped">
@@ -44,7 +29,7 @@
     <div class="tile is-parent">
       <div class="tile is-child has-background-white">
          <div class="title">
-            <p class="has-text-weight-light is-size-5"> Timeline</p>
+            <p class="has-text-weight-light is-size-5"> </p>
 
           </div>
       </div>
@@ -61,7 +46,6 @@ export default {
       return this.$store.getters.posts
     },
     last_posts () {
-      return this.posts.slice(-10)
     }
   }
 }

@@ -16,12 +16,14 @@
         <div class="tile is-ancestor">
           <div class="tile is-parent">
               <div class="tile" >
-                <div class="card" v-for="post in posts.slice(-2)" :key=post.id style="margin-right:10px">
+                <div class="homeCard card" v-for="(post,index) in posts.slice(-2)" :key=post.id style="margin-right:10px">
+                 <router-link :to="'/posts/' + index" >  </router-link>
                   <div class="card-image">
                       <figure class="image is-2by1">
                       <img src="http://lorempixel.com/640/360">
                       </figure>
                   </div>
+
                 <div class="card-content">
                   <div class="media">
                     <div class="media-content">
@@ -29,18 +31,35 @@
                       <p class="subtitle is-7"> Une histoire d'art </p>
                     </div>
                   </div>
-                  <div class="extrait content is-capitalized">
+                  <div class="extrait content">
                       {{post.body}}
                     <br>
-                    <time class="is-pulled-right is-size-7" datetime="2016-1-1"> 01 Janvier 2016</time>
-                    <br>
+                  </div>
+                  <time class="is-pulled-right is-size-7" datetime="2016-1-1"> 01 Janvier 2016</time>
+
+                  <div v-if="!isConnected">
+                    <ModalForm>
+                      <template v-slot:add> Lire l'article </template>
+                      <template v-slot:content>
+                        <p class="is-size-5 has-text-centered"> Ce contenu est reservé au personnes inscrites et connectées.  </p>
+                        <p class="is-size-6 has-text-centered"> Connectez pour lire l'article ! </p>
+                      </template>
+                      <template v-slot:submit>
+                         <router-link :to="'/login'"> Connectez-vous </router-link>
+                      </template>
+                    </ModalForm>
+                  </div>
+                  <div v-else>
+                     <router-link :to="'/posts/' + index">
+                    <a href="" class="button is-small"> Lire l'article </a>
+                    </router-link>
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-
+        <br>
         <div class="container presentation">
           <p class="is-size-5 has-text-centered">Excepteur sint occaecat cupidatat</p>
           <br>
@@ -53,6 +72,7 @@
             </div>
             <br>
             <div class="img_home"> </div>
+            <br>
             <div class="container presentation">
           <p class="is-size-5 has-text-centered">Excepteur sint occaecat cupidatat</p>
           <br>
@@ -68,12 +88,16 @@
 </template>
 
 <script>
+import ModalForm from '@/components/ModalForm.vue'
+
 export default {
+  components: {
+    ModalForm
+  },
   name: 'HomeUser',
   data () {
     return {
       mail: '',
-      mailSend: false
     }
   },
   mounted () {
@@ -90,10 +114,7 @@ export default {
   },
 
   methods: {
-    newletter: function () {
-      this.mailSend = true
-      this.mail = ''
-    }
+
   }
 }
 </script>
@@ -111,16 +132,14 @@ export default {
   margin-top:20px
 }
 .extrait {
-  max-height: 20px;
   text-overflow: ellipsis;
   overflow: hidden;
 }
-.card {
+.homeCard {
   width: 600px;
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
-
 }
 
 </style>

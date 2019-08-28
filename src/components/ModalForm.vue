@@ -2,22 +2,7 @@
   <div>
 
     <slot name="open">
-      <a class="button is-is-light" v-on:click="showModal"><slot name="add"> </slot></a>
-    </slot>
-
-    <slot name="search">
-      <div class="is-pulled-right">
-         <div class="field has-addons">
-            <div class="control">
-              <input class="input" type="text" placeholder="Find a repository">
-            </div>
-            <div class="control">
-              <a class="button is-light">
-                Search
-              </a>
-            </div>
-          </div>
-      </div>
+      <a class="button is-light is-small" v-on:click="showModal"><slot name="add"> </slot></a>
     </slot>
 
     <div class="modal is-active" v-if="isShow">
@@ -31,7 +16,7 @@
           <slot name="content"></slot>
         </section>
         <footer class="modal-card-foot">
-          <button class="button is-success"> Ajouter </button>
+          <button class="button is-small"> <slot name="submit"> </slot> </button>
         </footer>
       </div>
     </div>

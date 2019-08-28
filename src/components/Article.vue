@@ -10,7 +10,7 @@
         <div>
           <header>
             <div class="header-title">
-              <p class="is-size-5 has-text-weight-light"> Titre de l'article </p>
+              <p class="is-size-5 has-text-weight-light"> <a class="button" v-on:click="test"> </a> </p>
             </div>
           </header>
           <br>
@@ -21,7 +21,7 @@
               </figure>
             </div>
             <br>
-              <div class="is-size-5"> Titre de l'article {{id}}
+              <div class="is-size-5"> defz
                 <div class="is-pulled-right">
                 <div><img src="../assets/heartwhite.png" width="30px" v-on:click="like" v-if="!liked">
                   <img src="../assets/heart.png" width="30px" v-on:click="dislike" v-else>
@@ -103,13 +103,15 @@ export default {
   name: 'Article',
   data () {
     return {
-      id: this.$route.params.id,
+      idPage: this.$route.params.id,
       commentaire: '',
       day: 'date du jour',
       delete: false,
-      liked: false
+      liked: false,
+      articles:[],
     }
   },
+
   mounted () {
     this.$store.dispatch('showPosts')
   },
@@ -126,7 +128,7 @@ export default {
     },
     isLiked () {
       return this.$store.getters.isLiked
-    }
+    },
   },
 
   methods: {
@@ -140,6 +142,15 @@ export default {
     },
     dislike: function () {
       this.liked = false
+    },
+    test: function () {
+      console.log(this.body)
+    },
+    test: function () {
+      this.articles =  this.posts.filter(function(post) {
+	    return post.id == 1
+      });
+    console.log(this.articles)
     }
   }
 }

@@ -22,6 +22,7 @@
           </div>
         </div>
     </template>
+    <template v-slot:submit> Ajouter </template>
 
     </ModalForm>
       <br>

@@ -10,7 +10,7 @@ export default ({
   actions: {
     showPosts ({ commit }) {
       axios
-        .get('https://my-json-server.typicode.com/maizis/test')
+        .get('https://my-json-server.typicode.com/maizis/test/posts')
         .then(response => response.data)
         .then(posts => { commit('SET_POSTS', posts) })
     }
