@@ -1,10 +1,12 @@
 <template>
   <div class="has-text-weight-light">
+    <!-- Message error connexion -->
     <p v-if="!fail"> </p>
     <p v-else> {{ messagefail }} </p>
     <p style="margin-top:30px "> LE CONTENU EST RESERVÉ. </p>
     <p class="is-size-7"> CONNECTEZ-VOUS POUR ACCEDER AU ARTICLE </p>
     <br>
+      <!-- Connexion form -->
       <div id="form">
         <div class="field">
           <div class="control">
@@ -17,7 +19,6 @@
         <br>
         <a class="button is-overload" v-on:click.prevent="identification"> Connexion </a>
       </div>
-
     <a href="" class="forget is-size-8"> Mot de passe oublié ? </a>
   </div>
 </template>
@@ -49,7 +50,6 @@ export default {
       return this.$store.getters.adminPassword
     }
   },
-
   methods: {
     identification: function () {
       if (this.username === this.adminUser || this.password === this.adminPassword) {

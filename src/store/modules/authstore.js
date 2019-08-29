@@ -19,26 +19,26 @@ export default ({
 
   actions: {
     turnConnected ({ commit }) {
-      commit('SET_LOGIN')
+      commit('SET_LOGIN');
     },
     turnDeconnected ({ commit }) {
-      commit('SET_LOGOUT')
+      commit('SET_LOGOUT');
     },
     turnAdmin ({ commit }) {
-      commit('SET_ADMIN')
+      commit('SET_ADMIN');
     }
   },
 
   mutations: {
     SET_LOGIN (state) {
-      state.isConnected = true
+      state.isConnected = true;
     },
     SET_ADMIN: (state) => {
-      state.isAdmin = true
+      state.isAdmin = true;
     },
     SET_LOGOUT: (state) => {
-      state.isConnected = false
-      state.isAdmin = false
+      state.isConnected = false;
+      state.isAdmin = false;
     }
   }
-})
+});

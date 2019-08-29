@@ -1,5 +1,6 @@
 <template>
   <div class="home">
+    <!-- Introduction -->
     <div class="container presentation">
       <p class="is-size-5 has-text-centered">Excepteur sint occaecat cupidatat</p>
       <br>
@@ -11,9 +12,9 @@
         les rouages de la scène artistique contemporaine
       </p>
     </div>
+    <!-- 2 articles -->
     <br>
     <p class="is-size-7" style="margin:10px"> ARTICLE DE LA SEMAINE </p>
-
     <div class="tile is-ancestor">
       <div class="tile is-parent">
 
@@ -60,7 +61,7 @@
 
       </div>
     </div>
-
+    <!-- Paragraphe Lorem Ipsum -->
     <br>
     <div class="container presentation">
       <p class="is-size-5 has-text-centered">Excepteur sint occaecat cupidatat</p>
@@ -72,6 +73,7 @@
         commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
         velit esse cillum dolore eu fugiat nulla pariatur</p>
     </div>
+    <!-- Image + Paragraphe Lorem Ipsum -->
     <br>
     <div class="img_home"> </div>
     <br>

@@ -1,5 +1,6 @@
 <template>
   <div>
+    <!-- Menu de la page Admin -->
     <aside class="menu">
       <p class="menu-label"> GENERAL </p>
       <ul class="menu-list">

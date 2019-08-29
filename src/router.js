@@ -1,18 +1,18 @@
-import Vue from 'vue'
-import store from '@/store'
-import homeUser from './components/HomeUser.vue'
-import Admin from './views/Admin.vue'
-import Login from './views/Connexion.vue'
-import Signup from './views/Inscription.vue'
-import Posts from './views/Posts.vue'
-import Article from './components/Article.vue'
-import AdminHome from './components/AdminHome.vue'
-import AdminUser from './components/AdminUser.vue'
-import AdminPost from './components/AdminPost.vue'
-import AdminSecu from './components/AdminSecu.vue'
-import Router from 'vue-router'
+import Vue from 'vue';
+import store from '@/store';
+import homeUser from './components/HomeUser.vue';
+import Admin from './views/Admin.vue';
+import Login from './views/Connexion.vue';
+import Signup from './views/Inscription.vue';
+import Posts from './views/Posts.vue';
+import Article from './components/Article.vue';
+import AdminHome from './components/AdminHome.vue';
+import AdminUser from './components/AdminUser.vue';
+import AdminPost from './components/AdminPost.vue';
+import AdminSecu from './components/AdminSecu.vue';
+import Router from 'vue-router';
 
-Vue.use(Router)
+Vue.use(Router);
 
 const router = new Router({
   routes: [
@@ -26,9 +26,9 @@ const router = new Router({
       component: Admin,
       beforeEnter: (to, from, next) => {
         if (store.getters.isAdmin) {
-          next()
+          next();
         } else {
-          next('/')
+          next('/');
         }
       },
       children: [
@@ -66,9 +66,9 @@ const router = new Router({
       component: Article,
       beforeEnter: (to, from, next) => {
         if (store.getters.isConnected) {
-          next()
+          next();
         } else {
-          next('/')
+          next('/');
         }
       }
     },
@@ -78,12 +78,12 @@ const router = new Router({
       component: Posts,
       beforeEnter: (to, from, next) => {
         if (store.getters.isConnected) {
-          next()
+          next();
         } else {
-          next('/')
+          next('/');
         }
       }
     }
   ]
-})
-export default router
+});
+export default router;

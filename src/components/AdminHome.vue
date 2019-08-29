@@ -1,5 +1,6 @@
 <template>
   <div>
+    <!-- Listes des articles -->
     <div class="tile is-ancestor">
       <div class="tile is-parent">
         <div class="tile is-child tablecontent">
@@ -21,15 +22,6 @@
               </tr>
               </tbody>
           </table>
-        </div>
-      </div>
-    </div>
-    <div class="tile is-ancestor">
-      <div class="tile is-parent">
-       <div class="tile is-child has-background-white">
-         <div class="title">
-            <p class="has-text-weight-light is-size-5"> </p>
-          </div>
         </div>
       </div>
     </div>

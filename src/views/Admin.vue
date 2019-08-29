@@ -1,4 +1,5 @@
 <template>
+<!-- Admin Vue -->
   <div style="margin-top:30px">
     <div class="columns">
       <div class="column is-3">

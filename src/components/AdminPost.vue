@@ -1,6 +1,6 @@
 <template>
   <div>
-
+    <!-- ModalForm : Button add article + Modal content -->
     <ModalForm>
       <template v-slot:add> Ajouter un article </template>
       <template v-slot:content>
@@ -21,9 +21,10 @@
           </div>
         </div>
       </template>
-      <template v-slot:submit> <a v-on:click="test"> Ajouter </a></template>
+      <template v-slot:submit> Ajouter </template>
     </ModalForm>
 
+    <!-- Listes des articles -->
     <br>
     <table class="table is-fullwidth table is-striped">
       <thead class="user">
@@ -69,10 +70,6 @@ export default {
       return this.posts.slice(0)
     }
   },
-  methods: {
-    show: function () {
-    }
-  }
 }
 </script>
 

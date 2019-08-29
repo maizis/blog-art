@@ -1,6 +1,6 @@
 <template>
   <div>
-
+    <!-- ModalForm : Button add user + Modal content -->
     <ModalForm>
       <template v-slot:add> Ajouter un utilisateur </template>
       <template v-slot:content>
@@ -24,6 +24,7 @@
       <template v-slot:submit> Ajouter </template>
     </ModalForm>
 
+<!-- Liste des users, fake liste -->
     <br>
     <table class="table is-fullwidth table is-striped">
       <thead class="user">

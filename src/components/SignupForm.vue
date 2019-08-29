@@ -2,7 +2,7 @@
   <div class="has-text-weight-light">
     <p style="margin-top:30px "> LE CONTENU EST RESERVÉ. </p>
     <p class="is-size-7"> INSCRIVEZ-VOUS POUR ACCEDER AU ARTICLE </p>
-
+    <!-- Signup Form -->
     <div id="form">
       <div class="field">
         <div class="control">

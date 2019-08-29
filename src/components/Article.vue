@@ -6,11 +6,12 @@
 
     <div class="columns">
       <div class="column is-8">
-        <!--<pre>{{ post }}</pre>-->
+
+        <!-- Article avec titre - Subtitle - Content - Date_upload -->
         <div>
           <header>
             <div class="header-title">
-              <p class="is-size-5 has-text-weight-light"> {{ post.title }}  </p>
+              <p class="is-size-5 has-text-weight-light"> {{post.title}}  </p>
             </div>
           </header>
           <br>
@@ -29,13 +30,14 @@
                 </div>
               </div>
             </div>
-            <h3 class="is-size-9"> {{ post.subtitle }} </h3>
+            <h3 class="is-size-9"> {{post.subtitle}} </h3>
             <br>
-            <p>{{ post.body }}</p>
-            <h1 class="date content is-pulled-right"> {{ post.date_upload }}</h1>
+            <p>{{post.body}}</p>
+            <h1 class="date content is-pulled-right"> {{post.date_upload}}</h1>
             <br>
           </div>
         </div> <br>
+        <!-- Comment form -->
         <div class="field">
             <div class="control">
               <textarea class="textarea" v-model="commentaire" placeholder="Ajouter un commentaire"></textarea>
@@ -44,6 +46,7 @@
         </div>
         <br>
         <br>
+        <!-- Comment list -->
         <div class="commentaire contains card" v-for=" comment in comments" :key=comment.id>
           <div class="card-content has-text-left">
             <article class="media">
@@ -90,8 +93,6 @@
 </template>
 
 <script>
-import axios from 'axios'
-
 export default {
   name: 'Article',
   data () {
@@ -99,19 +100,13 @@ export default {
       // post: {},
       id: this.$route.params.id,
       commentaire: '',
+      comments: [],
       delete: false,
       liked: false
     }
   },
 
-  // getters: {
-  //   post: state => state.post
-  //   },
-
   mounted () {
-    // this.$store.dispatch('showPost', { id: this.$route.params.id }).then((post) => {
-    //   this.post = post
-    // })
     this.$store.dispatch('showPost', { id: this.$route.params.id })
   },
 
@@ -121,9 +116,6 @@ export default {
     },
     randomUser () {
       return this.$store.getters.randomUser
-    },
-    comments () {
-      return this.$store.getters.comments
     },
     isLiked () {
       return this.$store.getters.isLiked

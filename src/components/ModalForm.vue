@@ -1,10 +1,10 @@
 <template>
   <div>
-
+    <!-- Bouton Open Modal -->
     <slot name="open">
       <a class="button is-light is-small" v-on:click="showModal"><slot name="add"> </slot></a>
     </slot>
-
+    <!-- Modal Form -->
     <div class="modal is-active" v-if="isShow">
       <div class="modal-background"></div>
       <div class="modal-card">
@@ -15,6 +15,7 @@
         <section class="modal-card-body">
           <slot name="content"></slot>
         </section>
+        <!-- Button Submit -->
         <footer class="modal-card-foot">
           <button class="button is-small"> <slot name="submit"> </slot> </button>
         </footer>
