@@ -2,21 +2,20 @@
   <div>
     <div class="tile is-ancestor" style="margin-top:20px">
       <div class="tile is-parent">
-         <div class="tile"> Zone de recherche
-          </div>
+         <div class="tile"> Zone de recherche </div>
       </div>
     </div>
 
-    <div class="tile is-ancestor" style="margin-top:20px" v-for="(post,index) in posts" :key=post.id>
+    <div class="tile is-ancestor" style="margin-top:20px" v-for="post in posts" :key=post.id>
       <div class="tile is-parent">
         <div class="tile" style="margin-right:40px">
-          <router-link :to="'/posts/' + index">
+          <router-link :to="'/posts/' + post.id">
           <div class="postCard card">
             <div class="card-image">
             <figure class="image is-2by1">
               <img src="https://bulma.io/images/placeholders/1280x960.png">
             </figure>
-          </div>
+            </div>
           <div class="card-content">
             <div class="media">
               <div class="media-content">
@@ -33,11 +32,11 @@
             </div>
           </div>
         </div>
-          </router-link>
+        </router-link>
       </div>
     </div>
-
   </div>
+
   </div>
 </template>
 
@@ -56,9 +55,9 @@ export default {
   computed: {
     posts () {
       return this.$store.getters.posts
-    },
-  },
+    }
   }
+}
 </script>
 
 <style lang="scss" scoped>

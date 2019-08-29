@@ -36,7 +36,7 @@
             <a class="navbar-item"> </a>
               <a class="navbar-item">
                 <router-link v-if="!isConnected" to="login">  Connexion </router-link>
-                 <a v-else v-on:click="logout"> Déconnexion </a>
+                 <router-link v-else  to="/"><a v-on:click="logout"> Déconnexion </a> </router-link>
               </a>
               <a class="navbar-item">
               <a v-if="!isConnected"> <router-link to="/signup"> Inscription </router-link> </a>

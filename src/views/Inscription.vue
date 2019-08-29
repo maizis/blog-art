@@ -1,7 +1,6 @@
 <template>
   <div class="inscription">
-
-      <SignupForm/>
+    <SignupForm/>
   </div>
 </template>
 

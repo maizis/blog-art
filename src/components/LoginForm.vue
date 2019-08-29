@@ -14,8 +14,8 @@
             <input class="input" type="password" name="password" v-model="password" id="password"  placeholder="Password" required>
           </div>
         </div>
-          <br>
-          <a class="button is-overload" v-on:click.prevent="identification"> Connexion </a>
+        <br>
+        <a class="button is-overload" v-on:click.prevent="identification"> Connexion </a>
       </div>
 
     <a href="" class="forget is-size-8"> Mot de passe oublié ? </a>

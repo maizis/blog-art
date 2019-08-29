@@ -1,16 +1,16 @@
 <template>
   <div class="has-text-weight-light" style="margin-top:30px">
-
     <div class="idArticle has-text-left">
       <router-link to="/posts"> Retour  </router-link>
     </div>
 
     <div class="columns">
       <div class="column is-8">
+        <!--<pre>{{ post }}</pre>-->
         <div>
           <header>
             <div class="header-title">
-              <p class="is-size-5 has-text-weight-light"> <a class="button" v-on:click="test"> </a> </p>
+              <p class="is-size-5 has-text-weight-light"> {{ post.title }}  </p>
             </div>
           </header>
           <br>
@@ -21,27 +21,19 @@
               </figure>
             </div>
             <br>
-              <div class="is-size-5"> defz
-                <div class="is-pulled-right">
-                <div><img src="../assets/heartwhite.png" width="30px" v-on:click="like" v-if="!liked">
+            <div class="is-size-5">
+              <div class="is-pulled-right">
+                <div>
+                  <img src="../assets/heartwhite.png" width="30px" v-on:click="like" v-if="!liked">
                   <img src="../assets/heart.png" width="30px" v-on:click="dislike" v-else>
-                  </div>
+                </div>
               </div>
             </div>
-            <h3 class="is-size-9"> Sous-titre de l'article </h3>
+            <h3 class="is-size-9"> {{ post.subtitle }} </h3>
             <br>
-            Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,
-            totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae
-            dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit,
-              sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
-              Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit,
-              sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat
-              voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit
-              laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit
-              qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat
-              <br>
-              <h1 class="date content is-pulled-right"> 23/02/2019 </h1>
-              <br>
+            <p>{{ post.body }}</p>
+            <h1 class="date content is-pulled-right"> {{ post.date_upload }}</h1>
+            <br>
           </div>
         </div> <br>
         <div class="field">
@@ -63,9 +55,8 @@
               <div class="media-content">
                 <div class="content">
                   <p>
-                      <strong> {{comment.pseudo}} </strong>
-                      <br>
-                      {{comment.body}}
+                    <strong> {{comment.pseudo}} </strong>
+                    <br> {{comment.body}}
                   </p>
                   <small> <a>Like</a> - <a>Reply</a> </small>
                   <small class="like"> 0 Like </small>
@@ -80,45 +71,53 @@
         <div>
           <header>
             <div class="card-header-title">
-              <p class="is-size-5"> 10 DERNIERS ARTICLES </p>
+              <p class="is-size-5"> DERNIERS ARTICLES </p>
             </div>
           </header>
             <div class="card-content">
               <div>
                 <ul>
-                  <li v-for="post in posts.slice(0,10)" :key=post.id>
+                  <!--<li v-for="post in posts.slice(0,10)" :key=post.id>
                      {{ post.title }}
-                  </li>
+                  </li>-->
                 </ul>
               </div>
             </div>
-          </div>
-</div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
+import axios from 'axios'
+
 export default {
   name: 'Article',
   data () {
     return {
-      idPage: this.$route.params.id,
+      // post: {},
+      id: this.$route.params.id,
       commentaire: '',
-      day: 'date du jour',
       delete: false,
-      liked: false,
-      articles:[],
+      liked: false
     }
   },
 
+  // getters: {
+  //   post: state => state.post
+  //   },
+
   mounted () {
-    this.$store.dispatch('showPosts')
+    // this.$store.dispatch('showPost', { id: this.$route.params.id }).then((post) => {
+    //   this.post = post
+    // })
+    this.$store.dispatch('showPost', { id: this.$route.params.id })
   },
 
   computed: {
-    posts () {
-      return this.$store.getters.posts
+    post () {
+      return this.$store.getters.post
     },
     randomUser () {
       return this.$store.getters.randomUser
@@ -128,29 +127,26 @@ export default {
     },
     isLiked () {
       return this.$store.getters.isLiked
-    },
+    }
+  },
+
+  watch: {
+    '$route': function route () {
+      console.log(window.location.href)
+      this.$store.dispatch('showPost', { id: this.$route.params.id })
+    }
   },
 
   methods: {
     addComment: function () {
       this.comments.push({ pseudo: this.randomUser, body: this.commentaire })
       this.commentaire = ''
-      console.table(this.comments)
     },
     like: function () {
       this.liked = true
     },
     dislike: function () {
       this.liked = false
-    },
-    test: function () {
-      console.log(this.body)
-    },
-    test: function () {
-      this.articles =  this.posts.filter(function(post) {
-	    return post.id == 1
-      });
-    console.log(this.articles)
     }
   }
 }

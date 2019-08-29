@@ -1,46 +1,46 @@
 <template>
   <div>
+
     <ModalForm>
-
       <template v-slot:add> Ajouter un article </template>
-
       <template v-slot:content>
         <div id="form">
           <div class="field">
             <div class="control">
               <br>
               <input class="input" type="text" name="title" v-model="title" id="title"  placeholder="Titre de l'article" required>
-                <br>
-                <br>
+              <br>
+              <br>
               <input class="input" type="text" name="subtitle" v-model="subtitle" id="subtitle"  placeholder="Sous-titre de l'article" required>
-                <br>
-                <br>
+              <br>
+              <br>
               <textarea class="textarea" type="text" name="bodyarticle" v-model="bodyarticle" id="bodyarticle"  placeholder="Contenu de l'article" rows="6" required> </textarea>
-                <br>
-                <br>
+              <br>
+              <br>
             </div>
           </div>
         </div>
       </template>
       <template v-slot:submit> <a v-on:click="test"> Ajouter </a></template>
     </ModalForm>
-      <br>
-      <table class="table is-fullwidth table is-striped">
-        <thead class="user">
-          <th>Id </th>
-          <th>Titre</th>
-          <th>Sous-titre</th>
-          <th>Delete</th>
-        </thead>
-        <tbody>
-          <tr v-for="post in posts.slice(0,10)" :key=post.id>
-            <th> {{ post.id }} </th>
-            <td style="max-width:200px">  {{ post.title }} </td>
-            <td style="max-width:200px">{{ post.body }} </td>
-            <td > X </td>
-          </tr>
-          </tbody>
-      </table>
+
+    <br>
+    <table class="table is-fullwidth table is-striped">
+      <thead class="user">
+        <th> Id </th>
+        <th> Titre</th>
+        <th> Sous-titre</th>
+        <th> Delete</th>
+      </thead>
+      <tbody>
+        <tr v-for="post in posts.slice(0,10)" :key=post.id>
+          <th> {{ post.id }} </th>
+          <td style="max-width:200px">  {{ post.title }} </td>
+          <td style="max-width:200px">{{ post.body }} </td>
+          <td > X </td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </template>
 
@@ -71,9 +71,7 @@ export default {
   },
   methods: {
     show: function () {
-      console.log(this.posts)
-    },
-
+    }
   }
 }
 </script>

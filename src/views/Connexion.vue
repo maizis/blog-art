@@ -29,6 +29,6 @@ export default {
 }
 .connexion {
   margin-top:10px;
-    text-align: center
+  text-align: center
 }
 </style>

@@ -31,6 +31,7 @@ export default {
       isShow: false
     }
   },
+
   methods: {
     showModal: function () {
       this.isShow = true

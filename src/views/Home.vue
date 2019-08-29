@@ -1,8 +1,8 @@
 <template>
   <div class="home">
     <div>
-    <HomeUser/>
-    <AdminUser v-if="isAdmin && isConnected"/>
+      <HomeUser/>
+      <AdminUser v-if="isAdmin && isConnected"/>
     </div>
   </div>
 </template>
