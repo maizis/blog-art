@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import AdminMenu from '@/components/AdminMenu.vue'
+import AdminMenu from '@/components/Admin/AdminMenu.vue'
 
 export default {
   components: {

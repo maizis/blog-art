@@ -6,10 +6,10 @@ import Login from './views/Connexion.vue';
 import Signup from './views/Inscription.vue';
 import Posts from './views/Posts.vue';
 import Article from './components/Article.vue';
-import AdminHome from './components/AdminHome.vue';
-import AdminUser from './components/AdminUser.vue';
-import AdminPost from './components/AdminPost.vue';
-import AdminSecu from './components/AdminSecu.vue';
+import AdminHome from './components/Admin/AdminHome.vue';
+import AdminUser from './components/Admin/AdminUser.vue';
+import AdminPost from './components/Admin/AdminPost.vue';
+import AdminSecu from './components/Admin/AdminSecu.vue';
 import Router from 'vue-router';
 
 Vue.use(Router);

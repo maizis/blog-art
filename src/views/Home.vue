@@ -9,7 +9,7 @@
 
 <script>
 import HomeUser from '@/components/HomeUser.vue'
-import HomeAdmin from '@/components/HomeAdmin.vue'
+import HomeAdmin from '@/components/Admin/AdminHome.vue'
 
 export default {
   name: 'Home',
