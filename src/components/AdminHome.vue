@@ -14,13 +14,20 @@
               <th>Likes</th>
             </thead>
             <tbody class="has-text-centered">
-              <tr v-for="post in posts.slice(0,10)" :key=post.id>
+              <tr
+                v-for="post in posts.slice(0,10)"
+                :key="post.id"
+              >
                 <th> {{ post.id }} </th>
-                <td style="max-width:200px">  {{ post.title }} </td>
-                <td style="max-width:200px">{{ post.body }} </td>
-                <td> {{post.like}} </td>
+                <td style="max-width:200px">
+                  {{ post.title }}
+                </td>
+                <td style="max-width:200px">
+                  {{ post.body }}
+                </td>
+                <td> {{ post.like }} </td>
               </tr>
-              </tbody>
+            </tbody>
           </table>
         </div>
       </div>

@@ -2,22 +2,36 @@
   <div>
     <!-- Bouton Open Modal -->
     <slot name="open">
-      <a class="button is-light is-small" v-on:click="showModal"><slot name="add"> </slot></a>
+      <a
+        class="button is-light is-small"
+        @click="showModal"
+      ><slot name="add" /></a>
     </slot>
     <!-- Modal Form -->
-    <div class="modal is-active" v-if="isShow">
-      <div class="modal-background"></div>
+    <div
+      v-if="isShow"
+      class="modal is-active"
+    >
+      <div class="modal-background" />
       <div class="modal-card">
         <header class="modal-card-head">
-          <p class="modal-card-title"> <slot name="add"> </slot></p>
-          <button class="delete" aria-label="close"  v-on:click="hideModal"></button>
+          <p class="modal-card-title">
+            <slot name="add" />
+          </p>
+          <button
+            class="delete"
+            aria-label="close"
+            @click="hideModal"
+          />
         </header>
         <section class="modal-card-body">
-          <slot name="content"></slot>
+          <slot name="content" />
         </section>
         <!-- Button Submit -->
         <footer class="modal-card-foot">
-          <button class="button is-small"> <slot name="submit"> </slot> </button>
+          <button class="button is-small">
+            <slot name="submit" />
+          </button>
         </footer>
       </div>
     </div>

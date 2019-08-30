@@ -1,8 +1,8 @@
 <template>
   <div class="home">
     <div>
-      <HomeUser/>
-      <AdminUser v-if="isAdmin && isConnected"/>
+      <HomeUser />
+      <AdminUser v-if="isAdmin && isConnected" />
     </div>
   </div>
 </template>
@@ -12,7 +12,7 @@ import HomeUser from '@/components/HomeUser.vue'
 import HomeAdmin from '@/components/HomeAdmin.vue'
 
 export default {
-  name: 'home',
+  name: 'Home',
   components: {
     HomeUser,
     HomeAdmin

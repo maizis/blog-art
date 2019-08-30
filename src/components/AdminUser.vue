@@ -2,29 +2,57 @@
   <div>
     <!-- ModalForm : Button add user + Modal content -->
     <ModalForm>
-      <template v-slot:add> Ajouter un utilisateur </template>
+      <template v-slot:add>
+        Ajouter un utilisateur
+      </template>
       <template v-slot:content>
         <div id="form">
           <div class="field">
             <div class="control">
               <br>
-              <input class="input" type="text" name="username" v-model="username" id="username"  placeholder="Pseudo" required>
+              <input
+                id="username"
+                v-model="username"
+                class="input"
+                type="text"
+                name="username"
+                placeholder="Pseudo"
+                required
+              >
               <br>
               <br>
-              <input class="input" type="email" name="Email" v-model="mail" id="mail"  placeholder="E-mail" required>
+              <input
+                id="mail"
+                v-model="mail"
+                class="input"
+                type="email"
+                name="Email"
+                placeholder="E-mail"
+                required
+              >
               <br>
               <br>
-              <input class="input" type="password" name="password" v-model="password" id="password"  placeholder="Password" required>
+              <input
+                id="password"
+                v-model="password"
+                class="input"
+                type="password"
+                name="password"
+                placeholder="Password"
+                required
+              >
               <br>
               <br>
             </div>
           </div>
         </div>
       </template>
-      <template v-slot:submit> Ajouter </template>
+      <template v-slot:submit>
+        Ajouter
+      </template>
     </ModalForm>
 
-<!-- Liste des users, fake liste -->
+    <!-- Liste des users, fake liste -->
     <br>
     <table class="table is-fullwidth table is-striped">
       <thead class="user">
@@ -46,7 +74,6 @@
         </tr>
       </tbody>
     </table>
-
   </div>
 </template>
 

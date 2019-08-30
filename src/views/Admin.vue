@@ -1,9 +1,9 @@
 <template>
-<!-- Admin Vue -->
+  <!-- Admin Vue -->
   <div style="margin-top:30px">
     <div class="columns">
       <div class="column is-3">
-        <AdminMenu/>
+        <AdminMenu />
       </div>
       <div class="column is-9">
         <router-view />

@@ -1,6 +1,6 @@
 <template>
   <div class="inscription">
-    <SignupForm/>
+    <SignupForm />
   </div>
 </template>
 
@@ -8,7 +8,7 @@
 import SignupForm from '@/components/SignupForm.vue'
 
 export default {
-  name: 'signup',
+  name: 'Signup',
 
   components: {
     SignupForm

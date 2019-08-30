@@ -1,8 +1,7 @@
 <template>
   <div class="connexion">
-    <div>
-    </div>
-    <LoginForm/>
+    <div />
+    <LoginForm />
   </div>
 </template>
 
@@ -10,7 +9,7 @@
 import LoginForm from '@/components/LoginForm.vue'
 
 export default {
-  name: 'connexion',
+  name: 'Connexion',
   components: {
     LoginForm
   },

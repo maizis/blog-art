@@ -2,26 +2,55 @@
   <div>
     <!-- ModalForm : Button add article + Modal content -->
     <ModalForm>
-      <template v-slot:add> Ajouter un article </template>
+      <template v-slot:add>
+        Ajouter un article
+      </template>
       <template v-slot:content>
         <div id="form">
           <div class="field">
             <div class="control">
               <br>
-              <input class="input" type="text" name="title" v-model="title" id="title"  placeholder="Titre de l'article" required>
+              <input
+                id="title"
+                v-model="title"
+                class="input"
+                type="text"
+                name="title"
+                placeholder="Titre de l'article"
+                required
+              >
               <br>
               <br>
-              <input class="input" type="text" name="subtitle" v-model="subtitle" id="subtitle"  placeholder="Sous-titre de l'article" required>
+              <input
+                id="subtitle"
+                v-model="subtitle"
+                class="input"
+                type="text"
+                name="subtitle"
+                placeholder="Sous-titre de l'article"
+                required
+              >
               <br>
               <br>
-              <textarea class="textarea" type="text" name="bodyarticle" v-model="bodyarticle" id="bodyarticle"  placeholder="Contenu de l'article" rows="6" required> </textarea>
+              <textarea
+                id="bodyarticle"
+                v-model="bodyarticle"
+                class="textarea"
+                type="text"
+                name="bodyarticle"
+                placeholder="Contenu de l'article"
+                rows="6"
+                required
+              />
               <br>
               <br>
             </div>
           </div>
         </div>
       </template>
-      <template v-slot:submit> Ajouter </template>
+      <template v-slot:submit>
+        Ajouter
+      </template>
     </ModalForm>
 
     <!-- Listes des articles -->
@@ -34,11 +63,18 @@
         <th> Delete</th>
       </thead>
       <tbody>
-        <tr v-for="post in posts.slice(0,10)" :key=post.id>
+        <tr
+          v-for="post in posts.slice(0,10)"
+          :key="post.id"
+        >
           <th> {{ post.id }} </th>
-          <td style="max-width:200px">  {{ post.title }} </td>
-          <td style="max-width:200px">{{ post.body }} </td>
-          <td > X </td>
+          <td style="max-width:200px">
+            {{ post.title }}
+          </td>
+          <td style="max-width:200px">
+            {{ post.body }}
+          </td>
+          <td> X </td>
         </tr>
       </tbody>
     </table>
@@ -59,9 +95,6 @@ export default {
       bodyarticle: ''
     }
   },
-  mounted () {
-    this.$store.dispatch('showPosts')
-  },
   computed: {
     posts () {
       return this.$store.getters.posts
@@ -69,6 +102,9 @@ export default {
     lastPosts () {
       return this.posts.slice(0)
     }
+  },
+  mounted () {
+    this.$store.dispatch('showPosts')
   },
 }
 </script>

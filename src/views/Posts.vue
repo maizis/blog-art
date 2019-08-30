@@ -1,24 +1,40 @@
 <template>
   <div>
     <!-- Search field -->
-    <div class="tile is-ancestor" style="margin-top:20px">
+    <div
+      class="tile is-ancestor"
+      style="margin-top:20px"
+    >
       <div class="tile is-parent">
-         <div class="tile">
-            <div class="field has-addons">
-              <div class="control">
-                <input class="input" type="text" placeholder="Find a repository" v-model="search">
-              </div>
-              <div class="control">
-                <a class="button is-info"> Search </a>
-              </div>
+        <div class="tile">
+          <div class="field has-addons">
+            <div class="control">
+              <input
+                v-model="search"
+                class="input"
+                type="text"
+                placeholder="Find a repository"
+              >
             </div>
-         </div>
+            <div class="control">
+              <a class="button is-info"> Search </a>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
     <!-- Article list with v-for -->
-    <div class="tile is-ancestor" style="margin-top:20px" v-for="post in posts" :key=post.id>
+    <div
+      v-for="post in posts"
+      :key="post.id"
+      class="tile is-ancestor"
+      style="margin-top:20px"
+    >
       <div class="tile is-parent">
-        <div class="tile" style="margin-right:40px">
+        <div
+          class="tile"
+          style="margin-right:40px"
+        >
           <router-link :to="'/posts/' + post.id">
             <div class="postCard card">
               <div class="card-image">
@@ -29,21 +45,28 @@
               <div class="card-content">
                 <div class="media">
                   <div class="media-content">
-                    <p class="title is-6"> {{post.title}} </p>
-                    <p class="subtitle is-7">  {{post.subtitle}}</p>
+                    <p class="title is-6">
+                      {{ post.title }}
+                    </p>
+                    <p class="subtitle is-7">
+                      {{ post.subtitle }}
+                    </p>
                   </div>
                 </div>
                 <div class="extrait content">
-                  {{post.body}}
-                    <br>
-                    <br>
-                    <time class="is-pulled-right is-size-7" datetime="2016-1-1">{{post.date_upload}}</time>
-                    <br>
-                  </div>
+                  {{ post.body }}
+                  <br>
+                  <br>
+                  <time
+                    class="is-pulled-right is-size-7"
+                    datetime="2016-1-1"
+                  >{{ post.date_upload }}</time>
+                  <br>
+                </div>
               </div>
             </div>
           </router-link>
-       </div>
+        </div>
       </div>
     </div>
   </div>
@@ -52,20 +75,20 @@
 <script>
 
 export default {
-  name: 'posts',
+  name: 'Posts',
   data () {
     return {
       search:''
     }
-  },
-  mounted () {
-    this.$store.dispatch('showPosts')
   },
 
   computed: {
     posts () {
       return this.$store.getters.posts
     },
+  },
+  mounted () {
+    this.$store.dispatch('showPosts')
   }
 }
 </script>
