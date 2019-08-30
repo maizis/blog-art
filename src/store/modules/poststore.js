@@ -5,10 +5,12 @@ export default ({
     posts: [],
     post: {}
   },
+
   getters: {
     posts: state => state.posts,
     post: state => state.post
   },
+
   actions: {
     showPosts ({ commit }) {
       axios

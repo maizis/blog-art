@@ -1,53 +1,99 @@
 <template>
-  <div class="has-text-weight-light" style="margin-top:30px">
-    <div class="idArticle has-text-left">
-      <router-link to="/posts"> Retour  </router-link>
+  <div
+    class="has-text-weight-light"
+    style="margin-top:30px"
+  >
+    <div class="has-text-left">
+      <router-link to="/posts">
+        Retour
+      </router-link>
     </div>
 
+    <br>
     <div class="columns">
       <div class="column is-8">
-
-        <!-- Article avec titre - Subtitle - Content - Date_upload -->
+        <!-- Article avec titre - Subtitle - Content - Date-upload -->
         <div>
+          <!-- Titre -->
           <header>
             <div class="header-title">
-              <p class="is-size-5 has-text-weight-light"> {{post.title}}  </p>
+              <p class="is-size-5 has-text-weight-light">
+                {{ post.title }}
+              </p>
             </div>
           </header>
           <br>
           <div class="has-text-justified">
+            <!-- Image -->
             <div class="card-image">
               <figure class="image is-2by1">
-                <img src="https://picsum.photos/500/300" alt="Placeholder image">
+                <img
+                  src="https://picsum.photos/500/300"
+                  alt="Placeholder image"
+                >
               </figure>
             </div>
             <br>
+            <!-- Subtitle -->
+            <h3 class="is-size-9">
+              {{ post.subtitle }}
+            </h3>
+            <br>
+            <!-- Body -->
+            <p>{{ post.body }}</p>
+            <br>
+            <!-- Like button -->
             <div class="is-size-5">
-              <div class="is-pulled-right">
+              <div class="is-pulled-left">
                 <div>
-                  <img src="../assets/heartwhite.png" width="30px" v-on:click="like" v-if="!liked">
-                  <img src="../assets/heart.png" width="30px" v-on:click="dislike" v-else>
+                  <img
+                    v-if="!liked"
+                    src="../assets/img/heartwhite.png"
+                    width="30px"
+                    @click="like"
+                  >
+                  <img
+                    v-else
+                    src="../assets/img/heart.png"
+                    width="30px"
+                    @click="dislike"
+                  >
                 </div>
               </div>
             </div>
-            <h3 class="is-size-9"> {{post.subtitle}} </h3>
-            <br>
-            <p>{{post.body}}</p>
-            <h1 class="date content is-pulled-right"> {{post.date_upload}}</h1>
+            <!-- Date-upload -->
+            <h1 class="date content is-pulled-right">
+              {{ post.date_upload }}
+            </h1>
             <br>
           </div>
-        </div> <br>
+        </div>
+        <br>
+
         <!-- Comment form -->
         <div class="field">
-            <div class="control">
-              <textarea class="textarea" v-model="commentaire" placeholder="Ajouter un commentaire"></textarea>
-              <a class="button is-small is-pulled-right is-primary is-inverted" style="margin-top:5px" v-on:click="addComment">Commenter </a>
-            </div>
+          <div class="control">
+            <textarea
+              v-model="commentaire"
+              class="textarea"
+              placeholder="Ajouter un commentaire"
+            />
+            <a
+              class="button is-small is-pulled-right is-primary is-inverted"
+              style="margin-top:5px"
+              @click="addComment"
+            >Commenter </a>
+          </div>
         </div>
         <br>
         <br>
+
         <!-- Comment list -->
-        <div class="commentaire contains card" v-for=" comment in comments" :key=comment.id>
+        <div
+          v-for=" comment in comments"
+          :key="comment.id"
+          class="commentaire contains card"
+        >
           <div class="card-content has-text-left">
             <article class="media">
               <figure class="media-left">
@@ -58,11 +104,9 @@
               <div class="media-content">
                 <div class="content">
                   <p>
-                    <strong> {{comment.pseudo}} </strong>
-                    <br> {{comment.body}}
+                    <strong> {{ comment.pseudo }} </strong>
+                    <br> {{ comment.body }}
                   </p>
-                  <small> <a>Like</a> - <a>Reply</a> </small>
-                  <small class="like"> 0 Like </small>
                 </div>
               </div>
             </article>
@@ -71,21 +115,27 @@
       </div>
 
       <div class="column is-4">
+        <!-- Last articles list -->
         <div>
           <header>
             <div class="card-header-title">
-              <p class="is-size-5"> DERNIERS ARTICLES </p>
+              <p class="is-size-5">
+                DERNIERS ARTICLES
+              </p>
             </div>
           </header>
-            <div class="card-content">
-              <div>
-                <ul>
-                  <!--<li v-for="post in posts.slice(0,10)" :key=post.id>
-                     {{ post.title }}
-                  </li>-->
-                </ul>
-              </div>
+          <div class="card-content">
+            <div>
+              <ul>
+                <li
+                  v-for="element in posts"
+                  :key="element.id"
+                >
+                  {{ element.title }}
+                </li>
+              </ul>
             </div>
+          </div>
         </div>
       </div>
     </div>
@@ -97,65 +147,57 @@ export default {
   name: 'Article',
   data () {
     return {
-      // post: {},
       id: this.$route.params.id,
       commentaire: '',
       comments: [],
       delete: false,
       liked: false
-    }
-  },
-
-  mounted () {
-    this.$store.dispatch('showPost', { id: this.$route.params.id })
+    };
   },
 
   computed: {
     post () {
-      return this.$store.getters.post
+      return this.$store.getters.post;
+    },
+    posts () {
+      return this.$store.getters.posts;
     },
     randomUser () {
-      return this.$store.getters.randomUser
+      return this.$store.getters.randomUser;
     },
     isLiked () {
-      return this.$store.getters.isLiked
+      return this.$store.getters.isLiked;
     }
   },
 
   watch: {
     '$route': function route () {
-      console.log(window.location.href)
-      this.$store.dispatch('showPost', { id: this.$route.params.id })
+      this.$store.dispatch('showPost', { id: this.$route.params.id });
+      //console.log(window.location.href)
     }
+  },
+
+  mounted () {
+    this.$store.dispatch('showPost', { id: this.$route.params.id });
+    this.$store.dispatch('showPosts');
   },
 
   methods: {
     addComment: function () {
-      this.comments.push({ pseudo: this.randomUser, body: this.commentaire })
-      this.commentaire = ''
+      this.comments.push({ pseudo: this.randomUser, body: this.commentaire });
+      this.commentaire = '';
     },
     like: function () {
-      this.liked = true
+      this.liked = true;
     },
     dislike: function () {
-      this.liked = false
+      this.liked = false;
     }
   }
-}
+};
 </script>
 
 <style lang="scss" scoped>
-.card {
-  &:not(:last-child) {
-    margin-bottom: 1rem;
-  }
-}
-li {
-  text-align: left;
-  overflow:hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
 ul {
   list-style: inside disc;
 }
@@ -166,17 +208,4 @@ ul {
 .like {
   float:right
 }
-.card-content {
-  padding:12px;
-  border:none;
-}
-.suggestion {
-  margin-bottom:20px;
-  background-color: #fff;
-  padding:10px
-}
-.idArticle {
-  margin-bottom:20px;
-}
-
 </style>

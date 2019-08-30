@@ -1,14 +1,14 @@
 <template>
   <div class="inscription">
-    <SignupForm/>
+    <SignupForm />
   </div>
 </template>
 
 <script>
-import SignupForm from '@/components/SignupForm.vue'
+import SignupForm from '@/components/SignupForm.vue';
 
 export default {
-  name: 'signup',
+  name: 'Signup',
 
   components: {
     SignupForm
@@ -16,18 +16,13 @@ export default {
 
   data () {
     return {
-    }
+    };
   }
-}
+};
 </script>
 
 <style>
-#imgAstro {
-  width:200px;
-  margin-top:40px;
-}
 .inscription {
-  margin-top:10px;
   text-align: center
 }
 </style>

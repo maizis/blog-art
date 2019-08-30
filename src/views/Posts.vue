@@ -1,49 +1,31 @@
 <template>
-  <div>
-    <!-- Search field -->
-    <div class="tile is-ancestor" style="margin-top:20px">
-      <div class="tile is-parent">
-         <div class="tile">
-            <div class="field has-addons">
-              <div class="control">
-                <input class="input" type="text" placeholder="Find a repository" v-model="search">
-              </div>
-              <div class="control">
-                <a class="button is-info"> Search </a>
-              </div>
-            </div>
-         </div>
-      </div>
-    </div>
+  <div class="article-list">
     <!-- Article list with v-for -->
-    <div class="tile is-ancestor" style="margin-top:20px" v-for="post in posts" :key=post.id>
-      <div class="tile is-parent">
-        <div class="tile" style="margin-right:40px">
+    <div
+      class="tile is-ancestor"
+      style="margin-top:20px;margin-bottom:20px"
+    >
+      <div
+        v-for="post in posts"
+        :key="post.id"
+        class="tile is-parent"
+      >
+        <div class="tile">
           <router-link :to="'/posts/' + post.id">
-            <div class="postCard card">
-              <div class="card-image">
-                <figure class="image is-2by1">
-                  <img src="http://placeimg.com/640/300/arch">
-                </figure>
-              </div>
-              <div class="card-content">
-                <div class="media">
-                  <div class="media-content">
-                    <p class="title is-6"> {{post.title}} </p>
-                    <p class="subtitle is-7">  {{post.subtitle}}</p>
-                  </div>
-                </div>
-                <div class="extrait content">
-                  {{post.body}}
-                    <br>
-                    <br>
-                    <time class="is-pulled-right is-size-7" datetime="2016-1-1">{{post.date_upload}}</time>
-                    <br>
-                  </div>
+            <div class=" card-post content">
+              <div class="content-overlay" />
+              <img
+                class="content-image"
+                src="https://picsum.photos/id/239/250/250"
+              >
+              <div class="content-text">
+                <p class="is-size-4">
+                  {{ post.title }}
+                </p>
               </div>
             </div>
           </router-link>
-       </div>
+        </div>
       </div>
     </div>
   </div>
@@ -52,38 +34,56 @@
 <script>
 
 export default {
-  name: 'posts',
-  data () {
-    return {
-      search:''
-    }
-  },
-  mounted () {
-    this.$store.dispatch('showPosts')
-  },
+  name: 'Posts',
 
   computed: {
     posts () {
-      return this.$store.getters.posts
-    },
+      return this.$store.getters.posts;
+    }
+  },
+
+  mounted () {
+    this.$store.dispatch('showPosts');
   }
-}
+};
 </script>
 
 <style lang="scss" scoped>
-li {
-  text-align: left;
-  overflow:hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+.article-list {
+  margin-top:50px
 }
-ul {
-  list-style: inside disc;
-}
-.postCard {
-  width: 900px;
-  text-overflow: ellipsis;
+.content {
+  position: relative;
+  margin: auto;
   overflow: hidden;
-  white-space: nowrap;
 }
+.content .content-overlay {
+  background: black;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  opacity: 0;
+}
+.content:hover .content-overlay{
+  opacity: 1;
+}
+.content-text {
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  opacity: 0;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  font-size: 0.8em;
+}
+.content:hover .content-text{
+  top: 50%;
+  left: 50%;
+  opacity: 1;
+}
+
 </style>

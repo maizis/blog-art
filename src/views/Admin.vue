@@ -1,9 +1,9 @@
 <template>
-<!-- Admin Vue -->
+  <!-- Admin Vue -->
   <div style="margin-top:30px">
     <div class="columns">
       <div class="column is-3">
-        <AdminMenu/>
+        <AdminMenu />
       </div>
       <div class="column is-9">
         <router-view />
@@ -13,17 +13,14 @@
 </template>
 
 <script>
-import AdminMenu from '@/components/AdminMenu.vue'
+import AdminMenu from '@/components/Admin/AdminMenu.vue';
 
 export default {
   components: {
     AdminMenu
   }
-}
+};
 </script>
 
 <style>
-.section {
-  margin-top:20px;
-}
 </style>
