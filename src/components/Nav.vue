@@ -4,24 +4,33 @@
     role="navigation"
     aria-label="main navigation"
   >
-    <div class="navbar-brand">
+  <!--Menu Burger Button -->
+    <div
+      class="navbar-brand"
+    >
       <a class="navbar-item" />
       <a
         role="button"
-        class="navbar-burger burger"
+        class="navbar-burger"
         aria-label="menu"
         aria-expanded="false"
-        data-target="navbarBasicExample"
+        data-target="navbarMenu"
+        @click="isOpen = !isOpen" v-bind:class="{'is-active': isOpen}"
       >
         <span aria-hidden="true" />
         <span aria-hidden="true" />
         <span aria-hidden="true" />
       </a>
     </div>
+
+    <!--Menu Content -->
+
     <div
-      id="navbarBasicExample"
+      id="navbarMenu"
       class="navbar-menu"
+       v-bind:class="{'is-active': isOpen}"
     >
+    <!--Menu Content RIGHT -->
       <div class="navbar-start">
         <a class="navbar-item">
           <router-link to="/">  Home  </router-link>
@@ -50,6 +59,8 @@
           <a><router-link to="/admin">Admin</router-link></a>
         </a>
       </div>
+
+      <!--Menu Content LEFT-->
       <div class="navbar-end">
         <div class="navbar-item">
           <p v-if="isAdmin">
@@ -78,7 +89,11 @@
 <script>
 export default {
   name: 'Nav',
-
+   data () {
+    return {
+      isOpen: false,
+    }
+  },
   computed: {
     isConnected () {
       return this.$store.getters.isConnected;
@@ -91,9 +106,12 @@ export default {
   methods: {
     logout: function () {
       this.$store.dispatch('turnDeconnected');
+    },
+    dropdown: function () {
+
     }
   }
-};
+}
 </script>
 
 <style lang="scss">
