@@ -15,7 +15,8 @@
         aria-label="menu"
         aria-expanded="false"
         data-target="navbarMenu"
-        @click="isOpen = !isOpen" v-bind:class="{'is-active': isOpen}"
+        @click="isOpen = !isOpen"
+        v-bind:class="{'is-active': isOpen}"
       >
         <span aria-hidden="true" />
         <span aria-hidden="true" />
@@ -24,7 +25,6 @@
     </div>
 
     <!--Menu Content -->
-
     <div
       id="navbarMenu"
       class="navbar-menu"
@@ -32,56 +32,76 @@
     >
     <!--Menu Content RIGHT -->
       <div class="navbar-start">
-        <a class="navbar-item">
-          <router-link to="/">  Home  </router-link>
-        </a>
 
-        <a
-          v-if="isConnected"
-          class="navbar-item"
-        >
-          <a><router-link to="/posts"> Articles </router-link></a>
-        </a>
+        <router-link to="/">
+          <a class="navbar-item">
+           <a> Home</a>
+          </a>
+        </router-link>
+
+        <router-link to="/posts" v-if="isConnected">
+          <a class="navbar-item" > <a>Articles</a>
+          </a>
+        </router-link>
+
         <a
           v-else
           class="navbar-item has-text-grey-light"
-        >
-          Articles
+        > Articles
         </a>
 
-        <a class="navbar-item">
-          <a><router-link to="/about"> About </router-link></a>
-        </a>
+        <router-link to="/about">
+          <a class="navbar-item">
+            <a>About</a>
+          </a>
+        </router-link>
+
+        <router-link to="/admin">
         <a
           v-if="isConnected && isAdmin"
           class="navbar-item"
         >
-          <a><router-link to="/admin">Admin</router-link></a>
+          <a>Admin</a>
         </a>
+        </router-link>
       </div>
 
       <!--Menu Content LEFT-->
       <div class="navbar-end">
         <div class="navbar-item">
-          <p v-if="isAdmin">
+          <p
+            class="navbar-item"
+            v-if="isAdmin">
             Log as : admin
           </p>
-          <a class="navbar-item" />
-          <a class="navbar-item">
-            <router-link
-              v-if="!isConnected"
-              to="login"
-            >  Connexion </router-link>
-            <router-link
-              v-else
-              to="login"
-            ><a @click="logout"> Déconnexion </a> </router-link>
-          </a>
-          <a class="navbar-item">
-            <a v-if="!isConnected"> <router-link to="/signup"> Inscription </router-link> </a>
-          </a>
+
+         <!--Connexion / Deconnexion -->
+          <router-link
+            to="login"
+            v-if="!isConnected"
+          > <a class="navbar-item"> Connexion </a>
+          </router-link>
+
+          <router-link
+            to="login"
+            v-else
+          > <a class="navbar-item">
+              <a @click="logout"> Déconnexion </a>
+            </a>
+          </router-link>
+
+          <!-- Inscription -->
+          <router-link to="signup">
+            <a class="navbar-item">
+              <a v-if="!isConnected">
+                Inscription
+              </a>
+            </a>
+          </router-link>
+
         </div>
       </div>
+
     </div>
   </nav>
 </template>
@@ -117,11 +137,15 @@ export default {
 <style lang="scss">
 .navbar-brand {
   margin-left:100px;
-  margin-top:10px;
 }
+
 .navbar-end {
   margin-right:80px;
 }
+.navbar-start {
+  margin-top:15px;
+}
+
 .general-footer {
   margin-top:30px
 }

@@ -27,11 +27,12 @@
         </div>
       </div>
     </div>
+    <br>
 
     <div class="tile is-ancestor">
       <div class="tile is-parent">
         <div class="tile is-child has-text-centered">
-          <br>
+
           <!-- About Contact -->
           <p class="is-size-5">
             Horaire d'ouvertures
