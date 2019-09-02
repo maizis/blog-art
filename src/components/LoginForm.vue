@@ -13,7 +13,7 @@
       {{ messagefail }}
     </p>
     <!-- Connexion form -->
-    <div class="signin-form">
+    <form class="signin-form">
       <div class="field">
         <div class="control">
           <input
@@ -23,6 +23,7 @@
             type="text"
             name="username"
             placeholder="Pseudo"
+            autocomplete="pseudo"
             required
           >
           <br>
@@ -34,6 +35,7 @@
             type="password"
             name="password"
             placeholder="Password"
+            autocomplete="password"
             required
           >
         </div>
@@ -43,7 +45,7 @@
         class="button is-overload"
         @click.prevent="identification"
       > Connexion </a>
-    </div>
+    </form>
     <a
       href=""
       class="forget is-size-8"

@@ -7,7 +7,7 @@
       INSCRIVEZ-VOUS POUR ACCEDER AU ARTICLE
     </p>
     <!-- Signup Form -->
-    <div class="signup-form">
+    <form class="signup-form">
       <div class="field">
         <div class="control">
           <br>
@@ -18,6 +18,7 @@
             type="text"
             name="username"
             placeholder="Pseudo"
+            autocomplete="username"
             required
           >
           <br>
@@ -29,6 +30,7 @@
             type="email"
             name="Email"
             placeholder="E-mail"
+            autocomplete="email"
             required
           >
           <br>
@@ -40,6 +42,7 @@
             type="password"
             name="password"
             placeholder="Password"
+            autocomplete="password"
             required
           >
           <br>
@@ -50,7 +53,7 @@
           > Inscription </a>
         </div>
       </div>
-    </div>
+    </form>
   </div>
 </template>
 
