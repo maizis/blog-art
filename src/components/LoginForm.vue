@@ -1,10 +1,5 @@
 <template>
   <div class="has-text-weight-light">
-    <!-- Message error connexion -->
-    <p v-if="!fail" />
-    <p v-else>
-      {{ messagefail }}
-    </p>
     <p style="margin-top:50px ">
       LE CONTENU EST RESERVÉ.
     </p>
@@ -12,6 +7,11 @@
       CONNECTEZ-VOUS POUR ACCEDER AU ARTICLE
     </p>
     <br>
+    <!-- Message error connexion -->
+    <p v-if="!fail" />
+    <p v-else>
+      {{ messagefail }}
+    </p>
     <!-- Connexion form -->
     <div class="signin-form">
       <div class="field">
@@ -81,11 +81,11 @@ export default {
 
   methods: {
     identification: function () {
-      if (this.username === this.adminUser || this.password === this.adminPassword) {
+      if (this.username === this.adminUser && this.password === this.adminPassword) {
         this.$store.dispatch('turnConnected');
         this.$store.dispatch('turnAdmin');
         this.$router.push('/admin');
-      } else if (this.username === this.randomUser || this.password === this.randomPassword) {
+      } else if (this.username === this.randomUser && this.password === this.randomPassword) {
         this.$store.dispatch('turnConnected');
         this.$router.push('/');
       } else {

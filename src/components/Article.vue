@@ -128,10 +128,10 @@
             <div>
               <ul>
                 <li
-                  v-for="element in posts"
-                  :key="element.id"
+                  v-for="post in posts"
+                  :key="post.id"
                 >
-                  {{ element.title }}
+                  <router-link :to="'/posts/' + post.id"> {{ post.title }} </router-link>
                 </li>
               </ul>
             </div>

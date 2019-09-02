@@ -33,7 +33,7 @@
           >
             <div class="card-image">
               <figure class="image is-2by1">
-                <img src="http://lorempixel.com/640/360">
+                <img src="https://picsum.photos/id/193/640/360">
               </figure>
             </div>
             <div class="card-content">
