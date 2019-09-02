@@ -14,13 +14,13 @@ export default ({
   actions: {
     showPosts ({ commit }) {
       axios
-        .get('https://my-json-server.typicode.com/maizis/test/posts')
+        .get('https://my-json-server.typicode.com/maizis/blog-art-fakeApi/posts')
         .then(response => response.data)
         .then(posts => { commit('SET_POSTS', posts); });
     },
     showPost ({ commit }, ob) {
       return axios
-        .get(`https://my-json-server.typicode.com/maizis/test/posts/${ob.id}`)
+        .get(`https://my-json-server.typicode.com/maizis/blog-art-fakeApi/posts/${ob.id}`)
         .then(response => {
           return response.data;
         })
