@@ -20,7 +20,8 @@
           style="padding-top:100px"
         >
           <div class="title is-size-6 has-text-weight-light">
-            <p class="is-size-3"> Oups, il semble que la page demandée est introubble ! </p>
+            <p class="is-size-3"> Oups, il semble que la page demandée est introuvable ! </p>
+            <br>
             <br>
             <p class="is-size-6">
              Retourner à la
@@ -31,6 +32,17 @@
                 page principale
               </router-link>
             </p>
+            <br>
+            <p class="is-size-6">
+             Retourner à la
+              <a
+                class="has-text-weight-bold"
+                @click="$router.go(-1)"
+              >
+                page précédente
+              </a>
+            </p>
+
 
           </div>
         </div>

@@ -6,7 +6,7 @@
         GENERAL
       </p>
       <ul class="menu-list">
-        <li><a> <router-link to="/error"> Informations </router-link></a></li>
+        <li><a> <router-link to="/user"> Informations </router-link></a></li>
         <li><a> <router-link to="/error"> Securité </router-link></a></li>
       </ul>
       <p class="menu-label">
