@@ -16,7 +16,7 @@
               <div class="content-overlay" />
               <img
                 class="content-image"
-                src="https://picsum.photos/id/234/250/250"
+                src="https://picsum.photos/id/234/280/260"
               >
               <div class="content-text">
                 <p class="is-size-4">

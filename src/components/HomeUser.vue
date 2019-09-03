@@ -24,69 +24,66 @@
     >
       ARTICLE DE LA SEMAINE
     </p>
+
     <div class="tile is-ancestor">
-      <div class="tile is-parent suggestion">
-        <div class="tile">
+      <div class="tile is-parent">
+
+        <div
+          class="tile is-child"
+          v-for="post in posts.slice(2)"
+          :key="post.id"
+          style="margin:10px"
+        >
           <div
-            v-for="post in posts.slice(2)"
-            :key="post.id"
-            class="card home-card"
-            style="margin:10px"
+            class="extrait has-background-light"
+            style="margin:10px; padding:10px"
           >
-            <div class="card-image">
-              <figure class="image is-2by1">
-                <img src="https://picsum.photos/id/193/640/360">
-              </figure>
+            <figure class="image is-2by1">
+              <img src="https://picsum.photos/id/193/640/360">
+            </figure>
+            <br>
+            <p class="is-size-6">
+              {{post.title}}
+            </p>
+            <div
+              class="extrait"
+              style="margin-top:10px"
+            >
+              <p class="is-size-7 article-body has-text-weight-light">
+                {{ post.subtitle }}
+              </p>
             </div>
-            <div class="card-content">
-              <div class="media">
-                <div class="media-content">
-                  <p class="title is-6">
-                    {{ post.title }}
+            <br>
+
+            <!-- Button read - ModalForm -->
+            <div v-if="!isConnected">
+              <ModalForm>
+                <template v-slot:add>
+                  Lire l'article
+                </template>
+                <template v-slot:content>
+                  <p class="is-size-5 has-text-centered">
+                    Ce contenu est reservé au personnes inscrites et connectées.
                   </p>
-                  <p class="subtitle is-7">
-                    Une histoire d'art
+                  <p class="is-size-6 has-text-centered">
+                    Connectez-vous pour lire l'article !
                   </p>
-                </div>
-              </div>
-              <div class="extrait content">
-                {{ post.body }}
-                <br>
-              </div>
-              <time
-                class="is-pulled-right is-size-7"
-                datetime="2016-1-1"
-              > {{ post.date_upload }}</time>
-              <div v-if="!isConnected">
-                <!-- Button read - ModalForm -->
-                <ModalForm>
-                  <template v-slot:add>
-                    Lire l'article
-                  </template>
-                  <template v-slot:content>
-                    <p class="is-size-5 has-text-centered">
-                      Ce contenu est reservé au personnes inscrites et connectées.
-                    </p>
-                    <p class="is-size-6 has-text-centered">
-                      Connectez-vous pour lire l'article !
-                    </p>
-                  </template>
-                  <template v-slot:submit>
-                    <router-link :to="'/login'">
-                      Connectez-vous
-                    </router-link>
-                  </template>
-                </ModalForm>
-              </div>
-              <div v-else>
-                <router-link :to="'/posts/' + post.id">
-                  <a
-                    href=""
-                    class="button is-small"
-                  > Lire l'article </a>
-                </router-link>
-              </div>
+                </template>
+                <template v-slot:submit>
+                  <router-link :to="'/login'">
+                    Connectez-vous
+                  </router-link>
+                </template>
+              </ModalForm>
             </div>
+
+            <div v-else>
+              <router-link :to="'/posts/' + post.id">
+                <a class="button is-small">
+                  Lire l'article </a>
+              </router-link>
+            </div>
+
           </div>
         </div>
       </div>
@@ -169,19 +166,6 @@ export default {
 }
 .presentation {
   width:600px;
-}
-.extrait {
-  text-overflow: ellipsis;
-  overflow: hidden;
-}
-.suggestion {
-  width:300px;
-}
-.home-card {
-  width: 590px;
-  text-overflow: ellipsis;
-  overflow: hidden;
-  white-space: nowrap;
 }
 
 </style>
