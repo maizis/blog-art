@@ -22,6 +22,9 @@
                 <p class="is-size-4">
                   {{ post.title }}
                 </p>
+                <p class="is-size-7">
+                  {{ post.date_upload }}
+                </p>
               </div>
             </div>
           </router-link>
