@@ -79,7 +79,7 @@
 
             <div v-else>
               <router-link :to="'/posts/' + post.id">
-                <a class="button is-small">
+                <a class="button is-small is-light">
                   Lire l'article </a>
               </router-link>
             </div>

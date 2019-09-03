@@ -28,7 +28,7 @@
             <div class="card-image">
               <figure class="image is-2by1">
                 <img
-                  src="https://picsum.photos/500/300"
+                  src="https://picsum.photos/id/1060/500/300"
                   alt="Placeholder image"
                 >
               </figure>

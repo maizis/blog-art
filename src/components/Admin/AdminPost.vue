@@ -1,5 +1,6 @@
 <template>
   <div>
+
     <!-- ModalForm : Button add article + Modal content -->
     <ModalForm>
       <template v-slot:add>
@@ -43,7 +44,26 @@
                 required
               />
               <br>
-              <br>
+              <div class="file">
+                <label class="file-label">
+                  <input
+                    class="file-input"
+                    type="file"
+                    name="resume"
+                  >
+                  <span class="file-cta">
+                    <span class="file-icon">
+                      <img
+                        src="https://img.icons8.com/material-rounded/24/000000/download.png"
+                      >
+                    </span>
+                    <span class="file-label">
+                      Download image file
+                    </span>
+                  </span>
+                </label>
+              </div>
+
             </div>
           </div>
         </div>

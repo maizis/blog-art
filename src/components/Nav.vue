@@ -91,6 +91,7 @@
           <router-link
             v-else
             to="login"
+            @click="logout"
           >
             <a class="navbar-item">
               <a @click="logout"> Déconnexion </a>
