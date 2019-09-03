@@ -1,20 +1,20 @@
 <template>
   <div>
-    <!-- Menu de la page Admin -->
+    <!-- Menu de la page User -->
     <aside class="menu">
       <p class="menu-label">
         GENERAL
       </p>
       <ul class="menu-list">
-        <li><a> <router-link to="/admin"> Informations </router-link></a></li>
-        <li><a> <router-link to="/admin/securite"> Securité </router-link></a></li>
+        <li><a> <router-link to=""> Informations </router-link></a></li>
+        <li><a> <router-link to=""> Securité </router-link></a></li>
       </ul>
       <p class="menu-label">
         ADMINISTRATION
       </p>
       <ul class="menu-list">
-        <li><a><router-link to="/admin/user"> Users </router-link></a></li>
-        <li><a> <router-link to="/admin/post"> Posts </router-link> </a></li>
+        <li><a><router-link to=""> Mes likes </router-link></a></li>
+        <li><a> <router-link to=""> Mes commentaires </router-link> </a></li>
       </ul>
       <p class="menu-label">
         AUTRE
@@ -29,7 +29,7 @@
 
 <script>
 export default {
-  name: 'AdminMenu',
+  name: 'UserMenu',
 };
 </script>
 

@@ -6,12 +6,16 @@
           <!-- About Image -->
           <img
             src="../../assets/img/img_about_1.jpeg"
-            width="500px"
+            width="600px"
+            style="padding:10px"
           >
         </div>
 
         <!-- About Presentation -->
-        <div class="tile is-child">
+        <div
+          class="tile is-child"
+          style="padding:10px"
+        >
           <p class="title is-size-6 has-text-weight-light">
             AU COMMENCEMENT, LE JARDIN ROYAL DES PLANTES MÉDICINALES
           </p>
@@ -31,7 +35,10 @@
 
     <div class="tile is-ancestor">
       <div class="tile is-parent">
-        <div class="tile is-child has-text-centered">
+        <div
+          class="tile is-child has-text-centered"
+          style="padding:10px"
+        >
 
           <!-- About Contact -->
           <p class="is-size-5">

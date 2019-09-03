@@ -10,6 +10,8 @@ import AdminHome from './components/Admin/AdminHome.vue';
 import AdminUser from './components/Admin/AdminUser.vue';
 import AdminPost from './components/Admin/AdminPost.vue';
 import AdminSecu from './components/Admin/AdminSecu.vue';
+import User from './views/User';
+import UserHome from './components/User/UserHome.vue';
 import About from './views/About.vue';
 import Router from 'vue-router';
 
@@ -49,6 +51,23 @@ const router = new Router({
           name: 'AdminSecu',
           component: AdminSecu
         }
+      ]
+    },
+    {
+      path: '/user',
+      component: User,
+      beforeEnter: (to, from, next) => {
+        if (store.getters.isConnected && !store.getters.isAdmin) {
+          next();
+        } else {
+          next('/');
+        }
+      },
+      children: [
+        { path: '/',
+          name: 'UserHome',
+          component: UserHome
+        },
       ]
     },
     {

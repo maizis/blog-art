@@ -77,8 +77,21 @@
           >
             Log as : admin
           </p>
-
           <!--Connexion / Deconnexion -->
+          <router-link
+            to="user"
+            v-if="isConnected && !isAdmin"
+          >
+            <a class="navbar-item">
+              <a>
+                <img
+                  src="https://img.icons8.com/ios-filled/30/000000/user-male-circle.png"
+                  style="padding-top:5px"
+                >
+              </a>
+            </a>
+          </router-link>
+
           <router-link
             v-if="!isConnected"
             to="login"
