@@ -1,5 +1,6 @@
 <template>
   <div class="home">
+
     <!-- Introduction Lorem Ipsum -->
     <div class="container presentation">
       <p class="is-size-5 has-text-centered">
@@ -14,6 +15,7 @@
         les rouages de la scène artistique contemporaine
       </p>
     </div>
+
     <!--  2 articles -->
     <br>
     <p
@@ -23,13 +25,13 @@
       ARTICLE DE LA SEMAINE
     </p>
     <div class="tile is-ancestor">
-      <div class="tile is-parent">
+      <div class="tile is-parent suggestion">
         <div class="tile">
           <div
             v-for="post in posts.slice(2)"
             :key="post.id"
-            class="home-card card"
-            style="margin-right:10px"
+            class="card home-card"
+            style="margin:10px"
           >
             <div class="card-image">
               <figure class="image is-2by1">
@@ -172,8 +174,11 @@ export default {
   text-overflow: ellipsis;
   overflow: hidden;
 }
+.suggestion {
+  width:300px;
+}
 .home-card {
-  width: 600px;
+  width: 590px;
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
