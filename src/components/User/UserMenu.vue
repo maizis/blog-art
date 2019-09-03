@@ -6,22 +6,22 @@
         GENERAL
       </p>
       <ul class="menu-list">
-        <li><a> <router-link to=""> Informations </router-link></a></li>
-        <li><a> <router-link to=""> Securité </router-link></a></li>
+        <li><a> <router-link to="/error"> Informations </router-link></a></li>
+        <li><a> <router-link to="/error"> Securité </router-link></a></li>
       </ul>
       <p class="menu-label">
         ADMINISTRATION
       </p>
       <ul class="menu-list">
-        <li><a><router-link to=""> Mes likes </router-link></a></li>
-        <li><a> <router-link to=""> Mes commentaires </router-link> </a></li>
+        <li><a><router-link to="/error"> Mes likes </router-link></a></li>
+        <li><a> <router-link to="/error"> Mes commentaires </router-link> </a></li>
       </ul>
       <p class="menu-label">
         AUTRE
       </p>
       <ul class="menu-list">
-        <li><a> <router-link to=""> Option 1 </router-link></a></li>
-        <li><a> <router-link to=""> Option 2 </router-link></a></li>
+        <li><a> <router-link to="/error"> Option 1 </router-link></a></li>
+        <li><a> <router-link to="/error"> Option 2 </router-link></a></li>
       </ul>
     </aside>
   </div>

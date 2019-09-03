@@ -13,6 +13,7 @@ import AdminSecu from './components/Admin/AdminSecu.vue';
 import User from './views/User';
 import UserHome from './components/User/UserHome.vue';
 import About from './views/About.vue';
+import ErrorPage from './components/ErrorPage.vue';
 import Router from 'vue-router';
 
 Vue.use(Router);
@@ -23,6 +24,11 @@ const router = new Router({
       path: '/',
       name: 'HomeUser',
       component: homeUser
+    },
+    {
+      path: '/error',
+      name: 'Error',
+      component: ErrorPage
     },
     {
       path: '/admin',
