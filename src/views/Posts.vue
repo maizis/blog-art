@@ -53,7 +53,8 @@ export default {
 
 <style lang="scss" scoped>
 .article-list {
-  margin-top:50px
+  margin-top:50px;
+  height: 400px;
 }
 .content {
   position: relative;
