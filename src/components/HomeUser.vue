@@ -35,7 +35,7 @@
           style="margin:10px"
         >
           <div
-            class="extrait has-background-white"
+            class="extrait has-background-white-bis"
             style="margin:10px; padding:10px"
           >
             <figure class="image is-2by1">
@@ -148,8 +148,10 @@
           >
           <h2 class="expo is-size-3 has-text-white">
           EXPOSITION </h2>
-          <p class="date-expo is-size-5 has-text-white">
-          2 3  /  1 2  / 1 9 </p>
+          <p class="d-expo is-size-7 has-text-white">
+          "A new way to see art"</p>
+          <p class="date-expo is-size-7 has-text-white">
+          - 2 3  /  1 2  / 1 9 - </p>
           <div class="buy-ticket">
             <a class="button">
             Buy Tickets
@@ -228,7 +230,7 @@ export default {
   width:100%
 }
 
-.expo, .date-expo, .buy-ticket {
+.expo, .date-expo, .d-expo, .buy-ticket {
     position: absolute;
     width: 100%;
 }
@@ -241,5 +243,11 @@ export default {
 }
 .buy-ticket {
   top: 70%;
+}
+.buy-ticket :hover {
+  background-color:#EDEDED
+}
+.d-expo {
+  top: 10%;
 }
 </style>
