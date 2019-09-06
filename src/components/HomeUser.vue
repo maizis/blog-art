@@ -7,7 +7,7 @@
         Excepteur sint occaecat cupidatat
       </p>
       <br>
-      <p class="is-size-7 has-text-justified">
+      <p class="is-size-7 has-text-centered">
         Animé par Frank Puaux et divers collaborateurs, le blog du Collectionneur Moderne décortique
         les rouages de la scène artistique contemporaine : guides pratiques, marché de l’art,
         expositions, interviews, etc. Des sujets de fond ou des actualités qui retiennent
@@ -96,7 +96,7 @@
         Excepteur sint occaecat cupidatat
       </p>
       <br>
-      <p class="is-size-7 has-text-justified">
+      <p class="is-size-7 has-text-centered">
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
         labore et dolore magna aliqua. Ut enim ad minim veniam,
         quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
@@ -113,7 +113,63 @@
         Excepteur sint occaecat cupidatat
       </p>
       <br>
-      <p class="is-size-7 has-text-justified">
+      <p class="is-size-7 has-text-centered">
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+        labore et dolore magna aliqua. Ut enim ad minim veniam,
+        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+        velit esse cillum dolore eu fugiat nulla pariatur
+      </p>
+    </div>
+    <br>
+    <br>
+    <!-- Tiles with 3 images LoremPicsum -->
+    <div
+      class="tile is-ancestor"
+      style="padding:10px"
+    >
+      <div class="tile is-4 is-vertical is-parent">
+        <div class="tile is-child">
+          <img src="https://picsum.photos/id/91/2000/1025"/>
+        </div>
+        <div class="tile is-child">
+          <img src="https://picsum.photos/id/939/2000/1025"/>
+        </div>
+      </div>
+      <div class="tile is-parent">
+
+        <div
+          class="tl-contain tile is-child"
+          style="text-align:center"
+        >
+          <img
+            class="img"
+            src="https://picsum.photos/id/172/2000/1100"
+          >
+          <h2 class="expo is-size-3 has-text-white">
+          EXPOSITION </h2>
+          <p class="date-expo is-size-5 has-text-white">
+          2 3  /  1 2  / 1 9 </p>
+          <div class="buy-ticket">
+            <a class="button">
+            Buy Tickets
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+     <!-- Paragraphe Lorem Ipsum -->
+    <br>
+    <div class="container presentation">
+      <p class="is-size-5 has-text-centered">
+        Excepteur sint occaecat cupidatat
+      </p>
+      <p class="is-size-3 has-text-centered has-text-grey-light">
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit"
+      </p>
+       <br>
+      <p class="is-size-7 has-text-centered">
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
         labore et dolore magna aliqua. Ut enim ad minim veniam,
         quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
@@ -167,5 +223,23 @@ export default {
 .presentation {
   width:600px;
 }
+.tl-contain {
+  position:relative;
+  width:100%
+}
 
+.expo, .date-expo, .buy-ticket {
+    position: absolute;
+    width: 100%;
+}
+.expo {
+  top: 30%;
+  width: 100%;
+}
+.date-expo {
+  top: 40%;
+}
+.buy-ticket {
+  top: 70%;
+}
 </style>
