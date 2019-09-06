@@ -4,7 +4,7 @@
       LE CONTENU EST RESERVÉ.
     </p>
     <p class="is-size-7">
-      CONNECTEZ-VOUS POUR ACCEDER AU ARTICLE
+      CONNECTEZ-VOUS POUR ACCEDER AU ARTICLES
     </p>
     <br>
     <!-- Message error connexion -->
@@ -15,7 +15,10 @@
     <!-- Connexion form -->
     <form class="signin-form">
       <div class="field">
-        <div class="control">
+        <div class="control has-icons-left">
+          <span class="icon is-small is-left">
+            <img src="https://img.icons8.com/ios/16/000000/user.png">
+          </span>
           <input
             id="username"
             v-model="username"
@@ -26,8 +29,12 @@
             autocomplete="pseudo"
             required
           >
+        </div>
           <br>
-          <br>
+        <div class="control has-icons-left">
+          <span class="icon is-small is-left">
+            <img src="https://img.icons8.com/ios/16/000000/password--v2.png">
+          </span>
           <input
             id="password"
             v-model="password"

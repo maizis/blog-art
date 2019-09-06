@@ -4,13 +4,16 @@
       LE CONTENU EST RESERVÉ.
     </p>
     <p class="is-size-7">
-      INSCRIVEZ-VOUS POUR ACCEDER AU ARTICLE
+      INSCRIVEZ-VOUS POUR ACCEDER AU ARTICLES
     </p>
     <!-- Signup Form -->
     <form class="signup-form">
       <div class="field">
-        <div class="control">
-          <br>
+        <br>
+        <div class="control has-icons-left">
+          <span class="icon is-small is-left">
+            <img src="https://img.icons8.com/ios/16/000000/user.png">
+          </span>
           <input
             id="username"
             v-model="username"
@@ -21,8 +24,12 @@
             autocomplete="username"
             required
           >
+          </div>
           <br>
-          <br>
+        <div class="control has-icons-left">
+          <span class="icon is-small is-left">
+            <img src="https://img.icons8.com/ios/16/000000/new-post.png">
+          </span>
           <input
             id="mail"
             v-model="mail"
@@ -33,8 +40,12 @@
             autocomplete="email"
             required
           >
+          </div>
           <br>
-          <br>
+        <div class="control has-icons-left">
+          <span class="icon is-small is-left">
+            <img src="https://img.icons8.com/ios/16/000000/password--v2.png">
+          </span>
           <input
             id="password"
             v-model="password"

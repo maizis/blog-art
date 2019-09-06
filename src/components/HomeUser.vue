@@ -35,7 +35,7 @@
           style="margin:10px"
         >
           <div
-            class="extrait has-background-light"
+            class="extrait has-background-white"
             style="margin:10px; padding:10px"
           >
             <figure class="image is-2by1">
