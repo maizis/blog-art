@@ -1,4 +1,5 @@
 # sarahproject
+Blog-art SPA front project only, works with External fake API.
 
 ## Project setup
 ```
